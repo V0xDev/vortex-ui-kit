@@ -18,10 +18,11 @@ withDefaults(defineProps<VButton>(), {
       { '--rounded': isRounded },
       { '--border': isBorder },
       { '--loading': isLoading },
+      { '--stretch': isStretch },
     ]"
   >
     <div v-if="isLoading" class="loader-container">
-      <VSpinner />
+      <VSpinner color="#fff" />
     </div>
     <div v-if="$slots.before" class="--before">
       <slot name="before" />
@@ -72,6 +73,10 @@ withDefaults(defineProps<VButton>(), {
     .--after {
       visibility: hidden;
     }
+  }
+
+  &.--stretch {
+    width: 100%;
   }
 
   &.--border {

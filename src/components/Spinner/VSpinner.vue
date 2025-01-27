@@ -8,7 +8,7 @@ type IconProps = {
 
 withDefaults(defineProps<IconProps>(), {
   size: "14px",
-  color: Color.secondary,
+  color: Color.neutral,
 });
 </script>
 
