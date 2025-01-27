@@ -1,0 +1,104 @@
+$base-size: 4px;
+$base-rounded: $base-size;
+
+$size: (
+  small: 14px,
+  medium: 16px,
+  large: 18px,
+);
+
+$spacing: (
+  small_4x: $base-size,
+  small_3x: calc($base-size * 2),
+  small_2x: calc($base-size * 3),
+  small_x: calc($base-size * 4),
+  small: calc($base-size * 6),
+  medium: calc($base-size * 8),
+  large: calc($base-size * 10),
+  large_x: calc($base-size * 12),
+  large_2x: calc($base-size * 16),
+  large_3x: calc($base-size * 24),
+);
+
+$z-index: (
+  base: 10,
+  drop: 100,
+  overlay: 1000,
+  global: 10000,
+);
+
+$base: (
+  main: #1b1b1b,
+  contrast: #ffffff,
+);
+
+$neutral: (
+  140: #373737,
+  120: #4f4f4f,
+  100: #707070,
+  80: #b1b0b0,
+  40: #d5d5d6,
+  10: #f1f1f1,
+  05: #f9f9f9,
+);
+
+$primary: (
+  140: #263588,
+  120: #2e3f9e,
+  100: #3f51b5,
+  80: #5b6ed7,
+  60: #8192ea,
+  40: #a3b0f3,
+  30: #c0c9fc,
+  20: #d4dafe,
+  10: #ecf1ff,
+  5: #f7faff,
+);
+
+$secondary: (
+  140: #b20060,
+  120: #db0076,
+  100: #ff0089,
+  80: #fb60b3,
+  40: #fea0d2,
+  20: #fecded,
+  10: #ffe7f7,
+);
+
+$error: (
+  140: #a90e0e,
+  120: #d41212,
+  100: #ed2b2b,
+  80: #f65151,
+  40: #ffacac,
+  20: #fecdcd,
+  10: #ffebeb,
+);
+
+$success: (
+  140: #0d7d32,
+  120: #0e953b,
+  100: #0fb345,
+  80: #2bcb61,
+  40: #81e49a,
+  20: #bfefcf,
+  10: #e3fceb,
+);
+
+$warning: (
+  140: #bd5b00,
+  120: #e06e06,
+  100: #f38816,
+  80: #f79b45,
+  40: #fcca92,
+  20: #ffe4c0,
+  10: #fef2e1,
+);
+
+$special: (
+  focused: #00b2fe,
+  120: #019da6,
+  40: #2dc9d2,
+  20: #b5ecf0,
+  modal: #000000b2,
+);
