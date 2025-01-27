@@ -97,6 +97,28 @@ export const Loading: Story = {
   },
 };
 
+export const FullWidth: Story = {
+  name: "Кнопка на всю ширину",
+  args: {
+    default: "Click Me!!",
+    isLoading: false,
+    variant: "primary",
+    size: "s",
+    isRounded: false,
+    isStretch: true,
+  },
+  argTypes: {
+    variant: {
+      options: COLORS_OPTIONS,
+      control: { type: "select" },
+    },
+    size: {
+      options: SIZE_OPTIONS,
+      control: { type: "select" },
+    },
+  },
+};
+
 export const Small: Story = {
   name: "Маленький размер",
   args: {
