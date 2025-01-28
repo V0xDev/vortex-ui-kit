@@ -1,7 +1,4 @@
-import { Color, Size } from "@/shared/constants";
-
-type ColorMode = keyof typeof Color;
-type SizeMode = keyof typeof Size;
+import { ColorMode, SizeMode } from "@/shared/types";
 
 export interface VCheckbox {
   variant?: ColorMode;

@@ -1,5 +1,6 @@
 export enum Color {
   "primary" = "#3f51b5",
+  "success" = "#0fb345",
   "error" = "#ed2b2b",
   "secondary" = "#ff0089",
   "neutral" = "#707070",

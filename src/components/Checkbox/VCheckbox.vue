@@ -71,6 +71,10 @@ withDefaults(defineProps<VCheckbox>(), {
     @extend %disabled-styles;
   }
 
+  &.--success {
+    @include checkbox-styles($success);
+  }
+
   &.--primary {
     @include checkbox-styles($primary);
   }
