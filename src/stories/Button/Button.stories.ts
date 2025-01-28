@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import VButton from "@/components/Button/VButton.vue";
 import { Color, COLORS_OPTIONS, Size, SIZE_OPTIONS } from "@/shared/constants";
+import VIcon from "@/components/Icon/VIcon.vue";
+import DuplicateIcon from "@/shared/icons/DuplicateIcon.vue";
+import CloseIcon from "@/shared/icons/CloseIcon.vue";
 
 const meta: Meta<typeof VButton> = {
   title: "Примитивы/Кнопки",
@@ -10,10 +13,10 @@ const meta: Meta<typeof VButton> = {
 
 export default meta;
 
-type Story = StoryObj<typeof VButton>;
+type Story = StoryObj<typeof VButton | typeof HTMLButtonElement>;
 
 export const Basic: Story = {
-  name: "Базовая кнопка",
+  name: "Кнопка",
   args: {
     default: "Click Me!!",
     isLoading: false,
@@ -33,8 +36,30 @@ export const Basic: Story = {
   },
 };
 
+export const BasicDisabled: Story = {
+  name: "Отключенная",
+  args: {
+    default: "Click Me!!",
+    isLoading: false,
+    variant: "primary",
+    size: "s",
+    isRounded: false,
+    disabled: true,
+  },
+  argTypes: {
+    variant: {
+      options: COLORS_OPTIONS,
+      control: { type: "select" },
+    },
+    size: {
+      options: SIZE_OPTIONS,
+      control: { type: "select" },
+    },
+  },
+};
+
 export const Outline: Story = {
-  name: "Кнопка с обводкой",
+  name: "С обводкой",
   args: {
     default: "Click Me!!",
     isLoading: false,
@@ -56,7 +81,7 @@ export const Outline: Story = {
 };
 
 export const Rounded: Story = {
-  name: "Кнопка с округлением",
+  name: "С округлением",
   args: {
     default: "Click Me!!",
     isLoading: false,
@@ -77,7 +102,7 @@ export const Rounded: Story = {
 };
 
 export const Loading: Story = {
-  name: "Кнопка с загрузкой",
+  name: "С загрузкой",
   args: {
     default: "Click Me!!",
     isLoading: true,
@@ -98,7 +123,7 @@ export const Loading: Story = {
 };
 
 export const FullWidth: Story = {
-  name: "Кнопка на всю ширину",
+  name: "На всю ширину",
   args: {
     default: "Click Me!!",
     isLoading: false,
@@ -180,4 +205,68 @@ export const Large: Story = {
       control: { type: "select" },
     },
   },
+};
+
+export const BasicSlots: Story = {
+  name: "Cлоты",
+  args: {
+    isLoading: false,
+    variant: "primary",
+    size: "s",
+    isRounded: false,
+    before: "Before",
+    default: "Click Me!!",
+    after: "After",
+  },
+  argTypes: {
+    variant: {
+      options: COLORS_OPTIONS,
+      control: { type: "select" },
+    },
+    size: {
+      options: SIZE_OPTIONS,
+      control: { type: "select" },
+    },
+  },
+};
+
+export const BasicSlotsWithIcons: Story = {
+  name: "Cлоты с иконками",
+  args: {
+    isLoading: false,
+    variant: "primary",
+    size: "s",
+    isRounded: false,
+  },
+  argTypes: {
+    variant: {
+      options: COLORS_OPTIONS,
+      control: { type: "select" },
+    },
+    size: {
+      options: SIZE_OPTIONS,
+      control: { type: "select" },
+    },
+  },
+  render: (args) => ({
+    components: { VButton, VIcon, CloseIcon, DuplicateIcon },
+    setup() {
+      return { args };
+    },
+    template: `
+      <VButton v-bind="args">
+        <template #after>
+          <VIcon v-bind="args">
+            <CloseIcon  />
+          </VIcon>
+        </template>
+        <template #default>Click Me!!</template>
+        <template #before>
+          <VIcon v-bind="args">
+            <DuplicateIcon  />
+          </VIcon>
+        </template>
+      </VButton>
+    `,
+  }),
 };

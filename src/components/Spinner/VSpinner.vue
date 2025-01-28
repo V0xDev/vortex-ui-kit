@@ -3,28 +3,28 @@ import { Color } from "@/shared/constants";
 
 type IconProps = {
   size?: string;
-  color?: string;
+  variant?: string;
 };
 
 withDefaults(defineProps<IconProps>(), {
   size: "14px",
-  color: Color.neutral,
+  variant: Color.neutral,
 });
 </script>
 
 <template>
-  <span class="loader" />
+  <span class="ui-spinner" />
 </template>
 
 <style lang="scss" scoped>
 @use "@/assets/_variables.scss" as *;
 
-.loader {
+.ui-spinner {
   width: v-bind(size);
   height: v-bind(size);
   border-radius: 50%;
   display: inline-block;
-  border-top: 3px solid v-bind(color);
+  border-top: 3px solid v-bind(variant);
   border-right: 3px solid transparent;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
