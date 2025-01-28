@@ -12,5 +12,5 @@ export enum Size {
 }
 
 export const COLORS_OPTIONS = Object.keys(Color);
-export const COLORS_VALUES = Object.keys(Color);
+export const COLORS_VALUES = Object.values(Color);
 export const SIZE_OPTIONS = Object.keys(Size);
