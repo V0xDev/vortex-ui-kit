@@ -15,11 +15,26 @@ type Story = StoryObj<typeof VSpinner>;
 export const Basic: Story = {
   name: "Спиннер",
   args: {
-    size: "40px",
-    color: "primary",
+    size: "25px",
+    variant: "primary",
   },
   argTypes: {
-    color: {
+    variant: {
+      control: "select",
+      options: COLORS_OPTIONS,
+      mapping: Color,
+    },
+  },
+};
+
+export const BasicChangeSize: Story = {
+  name: "Измененный размер",
+  args: {
+    size: "40px",
+    variant: "primary",
+  },
+  argTypes: {
+    variant: {
       control: "select",
       options: COLORS_OPTIONS,
       mapping: Color,

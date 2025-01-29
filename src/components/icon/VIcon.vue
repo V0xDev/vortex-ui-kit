@@ -15,7 +15,7 @@ withDefaults(defineProps<IconWrapperProps>(), {
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    class="ui-icon-load"
+    class="ui-icon"
     :viewBox="`0 0 24 24`"
   >
     <g :fill="color">
@@ -27,7 +27,7 @@ withDefaults(defineProps<IconWrapperProps>(), {
 <style scoped lang="scss">
 @use "@/assets/_variables.scss" as *;
 
-.ui-icon-load {
+.ui-icon {
   width: v-bind(width);
   height: v-bind(height);
   position: relative;

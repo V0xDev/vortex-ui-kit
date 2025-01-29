@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Fira Code";
+  font-weight: normal;
+  font-style: normal;
+  src: url("/src/static/font/FiraCode-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: normal;
+  font-style: normal;
+  src: url("/src/static/font/Inter_18pt-Regular.ttf");
+}
+
+body * {
+  font-family: "Fira Code", sans-serif;
+}

@@ -8,6 +8,7 @@ const config: StorybookConfig = {
     "@chromatic-com/storybook",
     "@storybook/preset-scss",
   ],
+  staticDirs: ["../src/static"],
   framework: {
     name: "@storybook/vue3-vite",
     options: {},

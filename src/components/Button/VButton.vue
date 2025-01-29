@@ -106,6 +106,10 @@ withDefaults(defineProps<VButton>(), {
     border-radius: $base-rounded;
   }
 
+  &.--success {
+    @include button-styles($success);
+  }
+
   &.--primary {
     @include button-styles($primary);
   }
