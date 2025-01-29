@@ -22,7 +22,7 @@ withDefaults(defineProps<VButton>(), {
     ]"
   >
     <div v-if="isLoading" class="loader-container">
-      <VSpinner color="#fff" />
+      <VSpinner variant="#fff" />
     </div>
     <div v-if="$slots.before" class="--before">
       <slot name="before" />
@@ -104,10 +104,6 @@ withDefaults(defineProps<VButton>(), {
 
   &.--rounded {
     border-radius: $base-rounded;
-  }
-
-  &.--success {
-    @include button-styles($success);
   }
 
   &.--primary {
