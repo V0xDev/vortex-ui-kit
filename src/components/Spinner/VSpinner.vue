@@ -1,15 +1,12 @@
 <script setup lang="ts">
-import { Color } from "@/shared/constants";
-import { ColorMode } from "@/shared/types";
-
 type IconProps = {
   size?: string;
-  variant?: ColorMode;
+  variant?: string;
 };
 
 withDefaults(defineProps<IconProps>(), {
   size: "14px",
-  variant: "neutral",
+  variant: "#707070",
 });
 </script>
 
