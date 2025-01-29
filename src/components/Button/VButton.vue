@@ -22,7 +22,7 @@ withDefaults(defineProps<VButton>(), {
     ]"
   >
     <div v-if="isLoading" class="loader-container">
-      <VSpinner color="#fff" />
+      <VSpinner variant="#fff" />
     </div>
     <div v-if="$slots.before" class="--before">
       <slot name="before" />
