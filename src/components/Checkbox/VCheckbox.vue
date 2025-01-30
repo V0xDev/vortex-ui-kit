@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VCheckbox } from "@/components/Checkbox/Checkbox.types";
+import { VCheckbox } from "@/components/Checkbox/VCheckbox.types";
 
 withDefaults(defineProps<VCheckbox>(), {
   variant: "primary",

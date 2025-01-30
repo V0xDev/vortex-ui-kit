@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { VButton } from "@/components/Button/Button.types";
+import type { VButton } from "@/components/Button/VButton.types";
 import VSpinner from "@components/Spinner/VSpinner.vue";
 
 withDefaults(defineProps<VButton>(), {
