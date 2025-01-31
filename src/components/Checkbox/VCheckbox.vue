@@ -19,7 +19,7 @@ withDefaults(defineProps<VCheckbox>(), {
       :checked="initialValue"
       :indeterminate="isIndeterminate"
     />
-    <label class="title" for="checkbox__id">
+    <label for="checkbox__id">
       <slot />
     </label>
   </div>
@@ -31,40 +31,35 @@ withDefaults(defineProps<VCheckbox>(), {
 @mixin checkbox-styles($backColor) {
   accent-color: map-get($backColor, 100);
 
-  .title {
-    color: map-get($base, main);
-  }
+  color: map-get($base, main);
 }
 
-@mixin set-width($size) {
+@mixin set-width($customSize) {
   .checkbox {
-    width: $size * 1.5;
-    height: $size * 1.5;
+    width: map-get($size, $customSize) * $multiplierSize;
+    height: map-get($size, $customSize) * $multiplierSize;
   }
 
-  .title {
-    font-size: $size * 1.1;
-  }
+  font-size: map-get($size, $customSize) * $multiplierFontSize;
 }
 
 %disabled-styles {
   opacity: 50%;
   cursor: default;
   pointer-events: none;
-  user-select: none;
 }
 
 .ui-checkbox {
   display: flex;
   gap: map-get($spacing, small_3x);
+  user-select: none;
 
   .checkbox {
     margin: initial;
   }
 
-  .title {
+  label {
     margin-top: 3px;
-    user-select: none;
   }
 
   &.--disabled {
@@ -92,15 +87,15 @@ withDefaults(defineProps<VCheckbox>(), {
   }
 
   &.--s {
-    @include set-width(map-get($size, small));
+    @include set-width(small);
   }
 
   &.--m {
-    @include set-width(map-get($size, medium));
+    @include set-width(medium);
   }
 
   &.--l {
-    @include set-width(map-get($size, large));
+    @include set-width(large);
   }
 }
 </style>

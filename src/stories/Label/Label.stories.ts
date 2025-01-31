@@ -21,7 +21,7 @@ export const Basic: Story = {
   name: "Стандартный текст",
   args: {
     size: "s1",
-    title: "Текст размера s1",
+    label: "Текст размера s1",
   },
   argTypes: {
     size: {
@@ -36,7 +36,7 @@ export const ChangeSize: Story = {
   name: "Измененный размер",
   args: {
     size: "s3",
-    title: "Можно выбрать любой размер (пропс size)",
+    label: "Можно выбрать любой размер (пропс size)",
   },
   argTypes: {
     size: {
@@ -51,7 +51,7 @@ export const ChangeColor: Story = {
   name: "Измененный цвет",
   args: {
     size: "s3",
-    title: "Можно выбрать любой цвет (пропс color)",
+    label: "Можно выбрать любой цвет (пропс color)",
     color: "#0066d0",
   },
   argTypes: {
@@ -67,7 +67,7 @@ export const ChangeColorV2: Story = {
   name: "Цвет из Enum",
   args: {
     size: "s3",
-    title: "Можно выбрать любой цвет (пропс color) подставив enum",
+    label: "Можно выбрать любой цвет (пропс color) подставив enum",
     color: "#0066d0",
   },
   argTypes: {
