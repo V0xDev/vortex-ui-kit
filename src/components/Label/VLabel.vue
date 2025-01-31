@@ -7,7 +7,7 @@ withDefaults(defineProps<VLabel>(), {
 </script>
 
 <template>
-  <span class="ui-label" :class="['--' + size]">{{ title }}</span>
+  <span class="ui-label" :class="['--' + size]">{{ label }}</span>
 </template>
 
 <style lang="scss" scoped>

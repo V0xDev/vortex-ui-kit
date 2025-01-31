@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import VButton from "@/components/Button/VButton.vue";
-import { Color, COLORS_OPTIONS, Size, SIZE_OPTIONS } from "@/shared/constants";
+import { COLORS_OPTIONS, SIZE_OPTIONS } from "@/shared/constants";
 import VIcon from "@/components/Icon/VIcon.vue";
 import DuplicateIcon from "@/shared/icons/DuplicateIcon.vue";
 import CloseIcon from "@/shared/icons/CloseIcon.vue";
