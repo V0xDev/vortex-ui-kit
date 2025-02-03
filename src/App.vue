@@ -1,7 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="info-container"></div>
+  <div class="info-container">
+    <div style="width: 500px"></div>
+  </div>
 </template>
 
 <style scoped>
