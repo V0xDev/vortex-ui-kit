@@ -122,6 +122,10 @@ withDefaults(defineProps<VButton>(), {
     @include button-styles($neutral);
   }
 
+  &.--success {
+    @include button-styles($success);
+  }
+
   &.--s {
     font-size: map-get($size, small);
     padding: map-get($spacing, small_2x) map-get($spacing, medium);
