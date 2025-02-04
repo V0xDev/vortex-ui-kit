@@ -1,7 +1,7 @@
 import { FontSizeMode } from "@/shared/types";
 
 export interface VLabel {
-  label: string;
+  label?: string;
   size?: FontSizeMode;
   color?: string;
 }

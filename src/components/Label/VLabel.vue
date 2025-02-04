@@ -7,7 +7,14 @@ withDefaults(defineProps<VLabel>(), {
 </script>
 
 <template>
-  <span class="ui-label" :class="['--' + size]">{{ label }}</span>
+  <span class="ui-label" :class="['--' + size]">
+    <template v-if="$slots.default">
+      <slot name="default" />
+    </template>
+    <template v-else="label">
+      {{ label }}
+    </template>
+  </span>
 </template>
 
 <style lang="scss" scoped>
