@@ -11,6 +11,7 @@ withDefaults(defineProps<VButton>(), {
 
 <template>
   <button
+    v-bind="$attrs"
     class="ui-button"
     :class="[
       '--' + variant,
