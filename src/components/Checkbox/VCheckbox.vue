@@ -1,10 +1,12 @@
-<script setup lang="ts">
+<script setup lang="ts" generic="T">
 import { VCheckbox } from "@/components/Checkbox/VCheckbox.types";
 
 withDefaults(defineProps<VCheckbox>(), {
   variant: "primary",
   size: "s",
 });
+
+const value = defineModel<T | null>({ required: true, default: null });
 </script>
 
 <template>
@@ -13,10 +15,10 @@ withDefaults(defineProps<VCheckbox>(), {
     :class="['--' + variant, '--' + size, { '--disabled': isDisabled }]"
   >
     <input
+      v-model="value"
       class="checkbox"
       type="checkbox"
       id="checkbox__id"
-      :checked="initialValue"
       :indeterminate="isIndeterminate"
     />
     <label for="checkbox__id">
