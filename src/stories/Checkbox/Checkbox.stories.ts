@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import { COLORS_OPTIONS, COLORS_VALUES } from "@/shared/constants";
 import VCheckbox from "@/components/Checkbox/VCheckbox.vue";
+import { GenericMeta } from "@/shared/types";
 
-const meta: Meta<typeof VCheckbox> = {
+const meta = {
   title: "Примитивы/Чекбокс/Стандартный",
   component: VCheckbox,
-  tags: ["autodocs"],
-};
+} satisfies GenericMeta<typeof VCheckbox>;
 
 export default meta;
 
@@ -32,7 +32,7 @@ export const BasicDefaultState: Story = {
   args: {
     default: "Label",
     variant: "primary",
-    initialValue: true,
+    modelValue: true,
   },
   argTypes: {
     variant: {
@@ -64,7 +64,7 @@ export const BasicDisabled: Story = {
   args: {
     default: "Label",
     variant: "primary",
-    initialValue: true,
+    modelValue: true,
     isDisabled: true,
   },
   argTypes: {
@@ -82,7 +82,7 @@ export const Small: Story = {
     default: "Label",
     variant: "error",
     size: "s",
-    initialValue: true,
+    modelValue: true,
   },
   argTypes: {
     variant: {
@@ -97,9 +97,9 @@ export const Medium: Story = {
   name: "Средний размер",
   args: {
     default: "Label",
-    variant: "secondary",
+    variant: "success",
     size: "m",
-    initialValue: true,
+    modelValue: true,
   },
   argTypes: {
     variant: {
@@ -116,7 +116,7 @@ export const Large: Story = {
     default: "Label",
     variant: "neutral",
     size: "l",
-    initialValue: true,
+    modelValue: true,
   },
   argTypes: {
     variant: {

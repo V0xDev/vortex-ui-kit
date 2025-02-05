@@ -5,5 +5,4 @@ export interface VCheckbox {
   size?: SizeMode;
   isDisabled?: boolean;
   isIndeterminate?: boolean;
-  initialValue?: boolean;
 }

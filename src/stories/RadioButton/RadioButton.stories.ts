@@ -2,10 +2,7 @@ import type { Meta, StoryObj } from "@storybook/vue3";
 import { COLORS_OPTIONS, SIZE_OPTIONS } from "@/shared/constants";
 import VRadioButton from "@/components/RadioButton/VRadioButton.vue";
 import { ref } from "vue";
-
-type GenericMeta<C> = Omit<Meta<C>, "component"> & {
-  component: Record<keyof C, unknown>;
-};
+import { GenericMeta } from "@/shared/types";
 
 interface SelectRadio {
   name: string;
