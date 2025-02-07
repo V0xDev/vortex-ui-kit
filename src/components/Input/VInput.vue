@@ -16,15 +16,11 @@ const mergedProps = computed<VInput["inputParams"] | VInput>(() => ({
   ...props.inputParams,
 }));
 
-const inputValue = defineModel<T | null>({ required: true, default: null });
+const modelValue = defineModel<T | null>({ required: true, default: null });
 
 const isValidTextParamsProps = computed(
   () => props.textParams && props.textParams.label
 );
-
-defineExpose({
-  inputValue,
-});
 </script>
 
 <template>
@@ -44,7 +40,7 @@ defineExpose({
       <div v-if="$slots.before" class="--before">
         <slot name="before" />
       </div>
-      <input v-bind="mergedProps" v-model="inputValue" />
+      <input v-bind="mergedProps" v-model="modelValue" />
       <div v-if="$slots.after" class="--after">
         <slot name="after" />
       </div>
