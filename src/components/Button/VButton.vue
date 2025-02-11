@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { VButton } from "@/components/Button/VButton.types";
+import type { VButton, VButtonSlots } from "@/components/Button/VButton.types";
 import VSpinner from "@components/Spinner/VSpinner.vue";
 
 withDefaults(defineProps<VButton>(), {
@@ -7,6 +7,8 @@ withDefaults(defineProps<VButton>(), {
   size: "s",
   isRounded: true,
 });
+
+defineSlots<VButtonSlots>();
 </script>
 
 <template>
@@ -20,6 +22,7 @@ withDefaults(defineProps<VButton>(), {
       { '--border': isBorder },
       { '--loading': isLoading },
       { '--stretch': isStretch },
+      { '--disabled': isDisabled },
     ]"
   >
     <div v-if="isLoading" class="loader-container">
@@ -99,6 +102,7 @@ withDefaults(defineProps<VButton>(), {
     transform: translateY(2px) translateZ(0);
   }
 
+  &.--disabled,
   &:disabled {
     @extend %disabled-styles;
   }
