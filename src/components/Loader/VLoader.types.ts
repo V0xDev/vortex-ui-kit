@@ -1,6 +1,6 @@
 export interface VLinearSpinner {
   height?: string;
   width?: string;
-  variant?: string;
+  color?: string;
   position?: "top" | "bottom" | "center";
 }

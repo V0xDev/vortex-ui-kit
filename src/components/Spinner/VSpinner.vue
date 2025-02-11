@@ -1,12 +1,12 @@
 <script setup lang="ts">
 type IconProps = {
   size?: string;
-  variant?: string;
+  color?: string;
 };
 
 withDefaults(defineProps<IconProps>(), {
   size: "14px",
-  variant: "#707070",
+  color: "#707070",
 });
 </script>
 
@@ -22,7 +22,7 @@ withDefaults(defineProps<IconProps>(), {
   height: v-bind(size);
   border-radius: 50%;
   display: inline-block;
-  border-top: 3px solid v-bind(variant);
+  border-top: 3px solid v-bind(color);
   border-right: 3px solid transparent;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;

@@ -20,12 +20,12 @@ export const Basic: Story = {
   args: {
     default: "Click Me!!",
     isLoading: false,
-    variant: "primary",
+    color: "primary",
     size: "s",
     isRounded: false,
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -41,13 +41,13 @@ export const BasicDisabled: Story = {
   args: {
     default: "Click Me!!",
     isLoading: false,
-    variant: "primary",
+    color: "primary",
     size: "s",
     isRounded: false,
     disabled: true,
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -63,13 +63,13 @@ export const Outline: Story = {
   args: {
     default: "Click Me!!",
     isLoading: false,
-    variant: "primary",
+    color: "primary",
     size: "s",
     isRounded: false,
     isBorder: true,
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -85,12 +85,12 @@ export const Rounded: Story = {
   args: {
     default: "Click Me!!",
     isLoading: false,
-    variant: "primary",
+    color: "primary",
     size: "s",
     isRounded: true,
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -106,12 +106,12 @@ export const Loading: Story = {
   args: {
     default: "Click Me!!",
     isLoading: true,
-    variant: "primary",
+    color: "primary",
     size: "s",
     isRounded: false,
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -127,13 +127,13 @@ export const FullWidth: Story = {
   args: {
     default: "Click Me!!",
     isLoading: false,
-    variant: "primary",
+    color: "primary",
     size: "s",
     isRounded: false,
     isStretch: true,
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -149,12 +149,12 @@ export const Small: Story = {
   args: {
     default: "Click Me!!",
     isLoading: false,
-    variant: "error",
+    color: "error",
     size: "s",
     isRounded: false,
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -170,12 +170,12 @@ export const Medium: Story = {
   args: {
     default: "Click Me!!",
     isLoading: false,
-    variant: "secondary",
+    color: "secondary",
     size: "m",
     isRounded: false,
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -191,12 +191,12 @@ export const Large: Story = {
   args: {
     default: "Click Me!!",
     isLoading: false,
-    variant: "neutral",
+    color: "neutral",
     size: "l",
     isRounded: false,
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -211,7 +211,7 @@ export const BasicSlots: Story = {
   name: "Cлоты",
   args: {
     isLoading: false,
-    variant: "primary",
+    color: "primary",
     size: "s",
     isRounded: false,
     before: "Before",
@@ -219,7 +219,7 @@ export const BasicSlots: Story = {
     after: "After",
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -234,12 +234,12 @@ export const BasicSlotsWithIcons: Story = {
   name: "Cлоты с иконками",
   args: {
     isLoading: false,
-    variant: "primary",
+    color: "primary",
     size: "s",
     isRounded: false,
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },

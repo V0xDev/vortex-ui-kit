@@ -4,7 +4,7 @@ export interface VRadioButton<T> {
   label: string;
   value: T;
   groupName: string;
-  variant?: ColorMode;
+  color?: ColorMode;
   size?: SizeMode;
   isDisabled?: boolean;
 }

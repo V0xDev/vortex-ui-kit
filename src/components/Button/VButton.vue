@@ -3,7 +3,7 @@ import type { VButton, VButtonSlots } from "@/components/Button/VButton.types";
 import VSpinner from "@components/Spinner/VSpinner.vue";
 
 withDefaults(defineProps<VButton>(), {
-  variant: "primary",
+  color: "primary",
   size: "s",
   isRounded: true,
 });
@@ -16,7 +16,7 @@ defineSlots<VButtonSlots>();
     v-bind="$attrs"
     class="ui-button"
     :class="[
-      '--' + variant,
+      '--' + color,
       '--' + size,
       { '--rounded': isRounded },
       { '--border': isBorder },
@@ -26,7 +26,7 @@ defineSlots<VButtonSlots>();
     ]"
   >
     <div v-if="isLoading" class="loader-container">
-      <VSpinner variant="#fff" />
+      <VSpinner color="#fff" />
     </div>
     <div v-if="$slots.before" class="--before">
       <slot name="before" />

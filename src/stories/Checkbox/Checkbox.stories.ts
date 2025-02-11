@@ -16,10 +16,10 @@ export const Basic: Story = {
   name: "Чекбокс",
   args: {
     default: "Label",
-    variant: "primary",
+    color: "primary",
   },
   argTypes: {
-    variant: {
+    color: {
       control: "select",
       options: COLORS_OPTIONS,
       mapping: COLORS_VALUES,
@@ -31,11 +31,11 @@ export const BasicDefaultState: Story = {
   name: "Значение по умолчанию",
   args: {
     default: "Label",
-    variant: "primary",
+    color: "primary",
     modelValue: true,
   },
   argTypes: {
-    variant: {
+    color: {
       control: "select",
       options: COLORS_OPTIONS,
       mapping: COLORS_VALUES,
@@ -47,11 +47,11 @@ export const BasicIndeterminate: Story = {
   name: "Indeterminate",
   args: {
     default: "Label",
-    variant: "primary",
+    color: "primary",
     isIndeterminate: true,
   },
   argTypes: {
-    variant: {
+    color: {
       control: "select",
       options: COLORS_OPTIONS,
       mapping: COLORS_VALUES,
@@ -63,12 +63,12 @@ export const BasicDisabled: Story = {
   name: "Отключенный",
   args: {
     default: "Label",
-    variant: "primary",
+    color: "primary",
     modelValue: true,
     isDisabled: true,
   },
   argTypes: {
-    variant: {
+    color: {
       control: "select",
       options: COLORS_OPTIONS,
       mapping: COLORS_VALUES,
@@ -80,12 +80,12 @@ export const Small: Story = {
   name: "Маленький размер",
   args: {
     default: "Label",
-    variant: "error",
+    color: "error",
     size: "s",
     modelValue: true,
   },
   argTypes: {
-    variant: {
+    color: {
       control: "select",
       options: COLORS_OPTIONS,
       mapping: COLORS_VALUES,
@@ -97,12 +97,12 @@ export const Medium: Story = {
   name: "Средний размер",
   args: {
     default: "Label",
-    variant: "success",
+    color: "success",
     size: "m",
     modelValue: true,
   },
   argTypes: {
-    variant: {
+    color: {
       control: "select",
       options: COLORS_OPTIONS,
       mapping: COLORS_VALUES,
@@ -114,12 +114,12 @@ export const Large: Story = {
   name: "Большой размер",
   args: {
     default: "Label",
-    variant: "neutral",
+    color: "neutral",
     size: "l",
     modelValue: true,
   },
   argTypes: {
-    variant: {
+    color: {
       control: "select",
       options: COLORS_OPTIONS,
       mapping: COLORS_VALUES,

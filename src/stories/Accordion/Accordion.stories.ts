@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import VAccordion from "@/components/Accordion/VAccordion.vue";
-import { COLORS_OPTIONS, SIZE_OPTIONS } from "@/shared/constants";
 import { onMounted, ref } from "vue";
 import { InstanceVAccordion, Maybe } from "@/shared/types";
 
@@ -24,7 +23,7 @@ export const BasicWithSlots: Story = {
   args: {
     label: "Текст аккордеона",
     buttonProps: {
-      variant: "primary",
+      color: "primary",
       size: "s",
     },
     default: "Содержимое аккордеона 1",
@@ -41,7 +40,7 @@ export const BasicDefaultState: Story = {
   args: {
     label: "Текст аккордеона",
     buttonProps: {
-      variant: "primary",
+      color: "primary",
       size: "s",
     },
   },
@@ -72,7 +71,7 @@ export const ChangeColor: Story = {
   args: {
     label: "Текст аккордеона",
     buttonProps: {
-      variant: "success",
+      color: "success",
       size: "s",
     },
     default: "Содержимое аккордеона 1",
@@ -89,7 +88,7 @@ export const ChangeSize: Story = {
   args: {
     label: "Текст аккордеона",
     buttonProps: {
-      variant: "primary",
+      color: "primary",
       size: "l",
     },
     default: "Содержимое аккордеона 1",

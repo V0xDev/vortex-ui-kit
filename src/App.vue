@@ -11,7 +11,7 @@ watch(tabs1, (v) => console.log("tabs1: ", v));
 <template>
   <div class="info-container">
     <div class="info-container__wrapper">
-      <VTabs v-model="tabs1" :tab-props="{ variant: 'primary' }">
+      <VTabs v-model="tabs1" :tab-props="{ color: 'primary' }">
         <VTab :value="0">Страница 1</VTab>
         <VTab :value="1">Страница 2</VTab>
         <VTab is-disabled :value="2">Страница 3</VTab>

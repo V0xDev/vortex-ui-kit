@@ -10,7 +10,7 @@ export interface VSelect<T> {
   options: SelectOption<T>[];
   placeholder: string;
   label?: string;
-  variant?: ColorMode;
+  color?: ColorMode;
   size?: SizeMode;
   maxWidth?: string;
   isButtonClear?: boolean;

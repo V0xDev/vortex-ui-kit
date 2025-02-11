@@ -16,10 +16,10 @@ export const Basic: Story = {
   name: "Спиннер",
   args: {
     size: "25px",
-    variant: "primary",
+    color: "primary",
   },
   argTypes: {
-    variant: {
+    color: {
       control: "select",
       options: COLORS_OPTIONS,
       mapping: Color,
@@ -31,10 +31,10 @@ export const BasicChangeSize: Story = {
   name: "Измененный размер",
   args: {
     size: "40px",
-    variant: "primary",
+    color: "primary",
   },
   argTypes: {
-    variant: {
+    color: {
       control: "select",
       options: COLORS_OPTIONS,
       mapping: Color,

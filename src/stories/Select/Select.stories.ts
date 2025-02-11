@@ -61,7 +61,7 @@ export const Basic: Story = {
     options: options,
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -81,7 +81,7 @@ export const NoData: Story = {
     options: [],
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -102,7 +102,7 @@ export const Disabled: Story = {
     options: options,
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -123,7 +123,7 @@ export const Loading: Story = {
     options: options,
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -144,7 +144,7 @@ export const WithLabel: Story = {
     options: options,
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -163,10 +163,10 @@ export const ChangeColor: Story = {
     placeholder: "Выберите имя",
     label: "Имя",
     options: options,
-    variant: "secondary",
+    color: "secondary",
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -187,7 +187,7 @@ export const Rounded: Story = {
     options: options,
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -208,7 +208,7 @@ export const FullWidth: Story = {
     options: options,
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -230,7 +230,7 @@ export const Small: Story = {
     size: "s",
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -252,7 +252,7 @@ export const Medium: Story = {
     size: "m",
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -274,7 +274,7 @@ export const Large: Story = {
     size: "l",
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -298,7 +298,7 @@ export const WithSlots: Story = {
     default: "slot-default",
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -319,7 +319,7 @@ export const WithIcons: Story = {
     size: "s",
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -368,7 +368,7 @@ export const ButtonDelete: Story = {
     size: "s",
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },

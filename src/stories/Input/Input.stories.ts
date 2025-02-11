@@ -38,7 +38,7 @@ export const Basic: Story = {
     },
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -61,7 +61,7 @@ export const Disabled: Story = {
     },
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -84,7 +84,7 @@ export const Readonly: Story = {
     modelValue: "Elon",
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -110,7 +110,7 @@ export const WithLabel: Story = {
     modelValue: "Elon",
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -133,7 +133,7 @@ export const ChangeType: Story = {
     },
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -150,13 +150,13 @@ export const ChangeColor: Story = {
     modelValue: "",
     isRounded: false,
     isStretch: false,
-    variant: "secondary",
+    color: "secondary",
     inputParams: {
       placeholder: "Введите логин",
     },
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -178,7 +178,7 @@ export const Rounded: Story = {
     },
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -200,7 +200,7 @@ export const FullWidth: Story = {
     },
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -223,7 +223,7 @@ export const Small: Story = {
     },
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -246,7 +246,7 @@ export const Medium: Story = {
     },
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -269,7 +269,7 @@ export const Large: Story = {
     },
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -294,7 +294,7 @@ export const WithSlots: Story = {
     before: "before",
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -312,7 +312,7 @@ export const WithIcons: Story = {
     isRounded: false,
     isStretch: false,
     size: "s",
-    variant: "success",
+    color: "success",
     textParams: {
       label: "Логин",
       size: "s2",
@@ -322,7 +322,7 @@ export const WithIcons: Story = {
     },
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -365,7 +365,7 @@ export const WithIconsV2: Story = {
     },
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -424,7 +424,7 @@ export const WithIconsV3: Story = {
     },
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },

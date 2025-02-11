@@ -30,7 +30,7 @@ export const Basic: Story = {
         disable: true,
       },
     },
-    variant: {
+    color: {
       table: {
         disable: true,
       },
@@ -62,14 +62,14 @@ export const Basic: Story = {
       <VRadioButton
         v-bind="args"
         v-model="selectedValue"
-        variant="primary"
+        color="primary"
         label="Радиокнопка 1"
         :value="{ name: 'Elon' }"
       />
       <VRadioButton
         v-bind="args"
         v-model="selectedValue"
-        variant="secondary"
+        color="secondary"
         label="Радиокнопка 2"
         :value="{ name: 'Mask' }"
       />
@@ -90,7 +90,7 @@ export const BasicDefault: Story = {
         disable: true,
       },
     },
-    variant: {
+    color: {
       table: {
         disable: true,
       },
@@ -117,14 +117,14 @@ export const BasicDefault: Story = {
       <VRadioButton
         v-bind="args"
         v-model="selectedValue"
-        variant="primary"
+        color="primary"
         label="Радиокнопка 1"
         :value="{ name: 'Elon' }"
       />
       <VRadioButton
         v-bind="args"
         v-model="selectedValue"
-        variant="secondary"
+        color="secondary"
         label="Радиокнопка 2"
         :value="{ name: 'Mask' }"
       />
@@ -138,14 +138,14 @@ export const BasicDisabled: Story = {
   args: {
     label: "Радиокнопка 1",
     isDisabled: true,
-    variant: "primary",
+    color: "primary",
     size: "s",
     value: "option1",
     groupName: "superName",
     modelValue: false,
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -165,14 +165,14 @@ export const ChangeColor: Story = {
   name: "Выбор цвета",
   args: {
     label: "Радиокнопка 1",
-    variant: "primary",
+    color: "primary",
     size: "s",
     value: "option1",
     groupName: "superName",
     modelValue: false,
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -192,14 +192,14 @@ export const Small: Story = {
   name: "Маленький размер",
   args: {
     label: "Радиокнопка 1",
-    variant: "error",
+    color: "error",
     size: "s",
     value: "option1",
     groupName: "superName",
     modelValue: false,
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -219,14 +219,14 @@ export const Medium: Story = {
   name: "Средний размер",
   args: {
     label: "Радиокнопка 1",
-    variant: "secondary",
+    color: "secondary",
     size: "m",
     value: "option1",
     groupName: "superName",
     modelValue: false,
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
@@ -246,14 +246,14 @@ export const Large: Story = {
   name: "Большой размер",
   args: {
     label: "Радиокнопка 1",
-    variant: "success",
+    color: "success",
     size: "l",
     value: "option1",
     groupName: "superName",
     modelValue: false,
   },
   argTypes: {
-    variant: {
+    color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },

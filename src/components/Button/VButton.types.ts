@@ -1,7 +1,7 @@
 import { ColorMode, SizeMode } from "@/shared/types";
 
 export interface VButton {
-  variant?: ColorMode;
+  color?: ColorMode;
   size?: SizeMode;
   isRounded?: boolean;
   isDisabled?: boolean;

@@ -19,7 +19,7 @@ export const Basic: Story = {
   name: "Стандартный",
   args: {
     tabProps: {
-      variant: "neutral",
+      color: "neutral",
       size: "s",
     },
   },
@@ -50,7 +50,7 @@ export const Disabled: Story = {
   name: "Отключенный",
   args: {
     tabProps: {
-      variant: "primary",
+      color: "primary",
       size: "s",
     },
   },
@@ -74,7 +74,7 @@ export const Loading: Story = {
   name: "Загрузка",
   args: {
     tabProps: {
-      variant: "neutral",
+      color: "neutral",
       size: "s",
     },
   },
@@ -98,7 +98,7 @@ export const ChangeColor: Story = {
   name: "Измененный цвет",
   args: {
     tabProps: {
-      variant: "success",
+      color: "success",
       size: "s",
     },
   },
@@ -122,7 +122,7 @@ export const FullWidth: Story = {
   name: "На всю ширину",
   args: {
     tabProps: {
-      variant: "neutral",
+      color: "neutral",
       size: "s",
       isStretch: true,
     },
@@ -147,7 +147,7 @@ export const Small: Story = {
   name: "Маленький размер",
   args: {
     tabProps: {
-      variant: "neutral",
+      color: "neutral",
       size: "s",
     },
   },
@@ -171,7 +171,7 @@ export const Medium: Story = {
   name: "Средний размер",
   args: {
     tabProps: {
-      variant: "neutral",
+      color: "neutral",
       size: "m",
     },
   },
@@ -195,7 +195,7 @@ export const Large: Story = {
   name: "Больший размер",
   args: {
     tabProps: {
-      variant: "neutral",
+      color: "neutral",
       size: "l",
     },
   },
@@ -219,7 +219,7 @@ export const WithSlots: Story = {
   name: "Слоты",
   args: {
     tabProps: {
-      variant: "neutral",
+      color: "neutral",
       size: "s",
     },
   },
@@ -247,7 +247,7 @@ export const WithIcons: Story = {
   name: "Cлоты с иконками",
   args: {
     tabProps: {
-      variant: "neutral",
+      color: "neutral",
       size: "s",
     },
   },

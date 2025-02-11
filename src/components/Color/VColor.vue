@@ -4,14 +4,14 @@ import { Color } from "@/shared/constants";
 import { computed } from "vue";
 
 const props = withDefaults(defineProps<VColor>(), {
-  variant: "primary",
+  color: "primary",
 });
 
-const textColor = computed(() => Color[props.variant]);
+const textColor = computed(() => Color[props.color]);
 </script>
 
 <template>
-  <div class="ui-color" :class="['--' + variant]">{{ textColor }}</div>
+  <div class="ui-color" :class="['--' + color]">{{ textColor }}</div>
 </template>
 
 <style lang="scss" scoped>

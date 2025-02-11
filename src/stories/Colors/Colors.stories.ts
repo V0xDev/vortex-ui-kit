@@ -15,10 +15,10 @@ type Story = StoryObj<typeof VColor>;
 export const Primary: Story = {
   name: "Синий",
   args: {
-    variant: "primary",
+    color: "primary",
   },
   argTypes: {
-    variant: {
+    color: {
       control: "select",
       options: COLORS_OPTIONS,
       mapping: COLORS_VALUES,
@@ -29,10 +29,10 @@ export const Primary: Story = {
 export const Success: Story = {
   name: "Зеленый",
   args: {
-    variant: "success",
+    color: "success",
   },
   argTypes: {
-    variant: {
+    color: {
       control: "select",
       options: COLORS_OPTIONS,
       mapping: COLORS_VALUES,
@@ -43,10 +43,10 @@ export const Success: Story = {
 export const Error: Story = {
   name: "Красный",
   args: {
-    variant: "error",
+    color: "error",
   },
   argTypes: {
-    variant: {
+    color: {
       control: "select",
       options: COLORS_OPTIONS,
       mapping: COLORS_VALUES,
@@ -57,10 +57,10 @@ export const Error: Story = {
 export const Secondary: Story = {
   name: "Розовый",
   args: {
-    variant: "secondary",
+    color: "secondary",
   },
   argTypes: {
-    variant: {
+    color: {
       control: "select",
       options: COLORS_OPTIONS,
       mapping: COLORS_VALUES,
@@ -71,10 +71,10 @@ export const Secondary: Story = {
 export const Neutral: Story = {
   name: "Серый",
   args: {
-    variant: "neutral",
+    color: "neutral",
   },
   argTypes: {
-    variant: {
+    color: {
       control: "select",
       options: COLORS_OPTIONS,
       mapping: COLORS_VALUES,

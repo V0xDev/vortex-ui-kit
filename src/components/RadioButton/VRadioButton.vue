@@ -2,7 +2,7 @@
 import { useId } from "vue";
 import { VRadioButton } from "./VRadioButton.types";
 
-const { size = "s", variant = "neutral" } = defineProps<VRadioButton<T>>();
+const { size = "s", color = "neutral" } = defineProps<VRadioButton<T>>();
 const customInput = defineModel<T | null>({ required: true, default: null });
 
 const unicId = useId();
@@ -11,7 +11,7 @@ const unicId = useId();
 <template>
   <div
     class="ui-radio-button"
-    :class="['--' + size, '--' + variant, { '--disabled': isDisabled }]"
+    :class="['--' + size, '--' + color, { '--disabled': isDisabled }]"
   >
     <input
       v-model="customInput"

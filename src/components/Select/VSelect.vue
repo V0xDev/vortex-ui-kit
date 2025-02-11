@@ -11,7 +11,7 @@ import {
 import VLoader from "../Loader/VLoader.vue";
 
 const props = withDefaults(defineProps<VSelect<T>>(), {
-  variant: "neutral",
+  color: "neutral",
   size: "m",
   maxWidth: "400px",
   isRounded: true,
@@ -52,7 +52,7 @@ const isButtonClose = computed(() => props.isButtonClear && modelValue.value);
   <div
     class="ui-select"
     :class="[
-      '--' + variant,
+      '--' + color,
       '--' + size,
       { '--rounded': isRounded },
       { '--stretch': isStretch },

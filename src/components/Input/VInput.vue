@@ -6,7 +6,7 @@ import VLoader from "@/components/Loader/VLoader.vue";
 
 const props = withDefaults(defineProps<VInput>(), {
   size: "s",
-  variant: "neutral",
+  color: "neutral",
   isStretch: true,
   isRounded: true,
 });
@@ -28,7 +28,7 @@ const isValidTextParamsProps = computed(
     class="ui-input"
     :class="[
       '--' + props.size,
-      '--' + props.variant,
+      '--' + props.color,
       { '--stretch': isStretch },
       { '--rounded': isRounded },
     ]"

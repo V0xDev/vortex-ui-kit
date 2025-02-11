@@ -2,7 +2,7 @@
 import { VCheckbox } from "@/components/Checkbox/VCheckbox.types";
 
 withDefaults(defineProps<VCheckbox>(), {
-  variant: "primary",
+  color: "primary",
   size: "s",
 });
 
@@ -12,7 +12,7 @@ const value = defineModel<T | null>({ required: true, default: null });
 <template>
   <div
     class="ui-checkbox"
-    :class="['--' + variant, '--' + size, { '--disabled': isDisabled }]"
+    :class="['--' + color, '--' + size, { '--disabled': isDisabled }]"
   >
     <input
       v-model="value"

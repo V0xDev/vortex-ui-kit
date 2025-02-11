@@ -2,7 +2,7 @@
 import { VLinearSpinner } from "./VLoader.types";
 
 withDefaults(defineProps<VLinearSpinner>(), {
-  variant: "#707070",
+  color: "#707070",
   height: "2.1px",
   width: "8.33%",
   position: "center",
@@ -43,7 +43,7 @@ withDefaults(defineProps<VLinearSpinner>(), {
     box-sizing: border-box;
     animation: hitZak 2.2s linear infinite alternate;
 
-    background-color: v-bind(variant);
+    background-color: v-bind(color);
   }
 
   @keyframes hitZak {
