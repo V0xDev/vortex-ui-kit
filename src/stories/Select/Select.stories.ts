@@ -29,7 +29,7 @@ export default meta;
 
 type Story = StoryObj<typeof VSelect>;
 
-const options = [
+const options: SelectOption<string>[] = [
   {
     key: "1",
     raw: "1",
