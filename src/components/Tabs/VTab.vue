@@ -10,7 +10,6 @@ const { activeValue, setActive } = getTabs();
 
 <template>
   <button
-    v-bind="$attrs"
     class="ui-tab"
     :class="[
       { '--active': activeValue === value },
