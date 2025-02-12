@@ -31,6 +31,6 @@ withDefaults(defineProps<IconWrapperProps>(), {
   width: v-bind(width);
   height: v-bind(height);
   position: relative;
-  display: inline-block;
+  display: block;
 }
 </style>
