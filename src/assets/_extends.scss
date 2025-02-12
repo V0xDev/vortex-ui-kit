@@ -3,3 +3,10 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+%disabled-styles {
+  opacity: 50%;
+  cursor: default;
+  pointer-events: none;
+  user-select: none;
+}

@@ -9,9 +9,3 @@ export interface VButton {
   isBorder?: boolean;
   isStretch?: boolean;
 }
-
-export interface VButtonSlots {
-  before?: () => any;
-  default?: () => any;
-  after?: () => any;
-}

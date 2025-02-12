@@ -5,12 +5,8 @@ export type CreateTabsProvided = ReturnType<typeof createTabs>;
 
 const TABS_KEY = "$tab-controller";
 
-export function createTabs(
-  tabValue: ModelRef<number | string>,
-  buttonProps: Partial<VButton>
-) {
+export function createTabs(tabValue: ModelRef<number | string>) {
   const toProvide = {
-    ...buttonProps,
     activeValue: computed(() => tabValue.value),
     setActive: (value: string | number) => {
       tabValue.value = value;
