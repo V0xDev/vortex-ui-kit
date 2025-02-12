@@ -36,7 +36,7 @@ const isValidTextParamsProps = computed(
     <div v-if="isValidTextParamsProps" class="--label">
       <VLabel v-bind="props.textParams" />
     </div>
-    <div class="--wrapper">
+    <div class="ui-input__wrapper">
       <div v-if="$slots.before" class="--before">
         <slot name="before" />
       </div>
@@ -113,7 +113,7 @@ $inputPadding: 33px;
   }
 
   &.--stretch input,
-  &.--stretch .--wrapper {
+  &.--stretch &__wrapper {
     width: 100%;
   }
 
@@ -132,7 +132,7 @@ $inputPadding: 33px;
     margin-bottom: map-get($spacing, small_4x);
   }
 
-  .--wrapper {
+  &__wrapper {
     width: fit-content;
     position: relative;
     @include flex-with-gap(row, left, center, $base-size * 2);

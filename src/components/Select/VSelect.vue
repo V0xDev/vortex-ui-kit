@@ -67,7 +67,7 @@ const isButtonClose = computed(() => props.isButtonClear && modelValue.value);
       <slot name="before" />
     </div>
     <label v-if="label" class="--label" :for="unicId">{{ label }}</label>
-    <div class="--wrapper">
+    <div class="ui-select__wrapper">
       <div class="selected-value" :id="unicId">
         <template v-if="modelValue">
           <span class="--label">
@@ -209,7 +209,7 @@ const isButtonClose = computed(() => props.isButtonClear && modelValue.value);
   width: fit-content;
   user-select: none;
 
-  .--wrapper {
+  &__wrapper {
     position: relative;
     display: flex;
     align-items: center;
