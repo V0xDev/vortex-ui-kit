@@ -7,6 +7,7 @@ export type GenericMeta<C> = Omit<Meta<C>, "component"> & {
 };
 
 export type ColorMode = keyof typeof Color;
+export type VTabsVariant = keyof typeof Color;
 export type SizeMode = keyof typeof Size;
 export type FontSizeMode = keyof typeof FontSize;
 

@@ -1,120 +1,90 @@
-<script setup lang="ts">
-import { SlotsType } from "vue";
-import VButton from "../Button/VButton.vue";
+<script lang="ts" setup>
+import VSpinner from "@components/Spinner/VSpinner.vue";
 import { getTabs } from "./VTabs.provide";
 import { VTab } from "./VTabs.types";
-import { VButtonSlots } from "../Button/VButton.types";
 
 defineProps<VTab>();
 
-const { activeValue, setActive, ...tabs } = getTabs();
-
-defineSlots<VButtonSlots>();
+const { activeValue, setActive } = getTabs();
 </script>
 
 <template>
-  <VButton
-    v-bind="{
-      ...$props,
-      ...tabs,
-      ...$attrs,
-    }"
+  <button
+    v-bind="$attrs"
     class="ui-tab"
-    :class="{ '--active': activeValue === value }"
+    :class="[
+      { '--active': activeValue === value },
+      { '--loading': isLoading },
+      { '--disabled': isDisabled },
+    ]"
     @click="setActive(value)"
   >
-    <template v-for="name in Object.keys($slots)" #[name]="scope">
-      <slot :name="name" v-bind="scope" />
-    </template>
-  </VButton>
+    <div v-if="isLoading" class="loader-container">
+      <VSpinner />
+    </div>
+    <div v-if="$slots.before" class="--before">
+      <slot name="before" />
+    </div>
+    <div v-if="$slots.default" class="--default">
+      <slot name="default" class="label" />
+    </div>
+    <div v-if="$slots.after" class="--after">
+      <slot name="after" />
+    </div>
+  </button>
 </template>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 @use "sass:map";
 @use "@/assets/_variables.scss" as *;
 @use "@/assets/_mixins.scss" as *;
+@use "@/assets/_extends.scss" as *;
 
-@mixin tab-styles($backColor) {
+.ui-tab {
+  position: relative;
+  backface-visibility: hidden;
+  border: none;
+  transition: 0.3s ease-in-out;
+  font-weight: 600;
+  color: map-get($neutral, 80);
+  background-color: transparent;
+  @include flex-with-gap(row, center, center, $base-size * 2);
+
   &::after {
     content: "";
     position: absolute;
     display: inline-block;
     width: 100%;
     height: 3px;
-    background-color: map-get($backColor, 40);
     bottom: 0;
     transition: background-color 0.25s ease-out;
   }
 
-  &.--active::after {
-    background-color: map-get($backColor, 120);
-  }
-}
-
-.ui-tab {
-  &:has(.ui-button.--stretch) {
-    flex: 1;
-    box-sizing: border-box;
+  &:hover {
+    cursor: pointer;
   }
 
-  :deep(.ui-spinner) {
-    border-top-color: map-get($neutral, 80);
+  &.--disabled,
+  &.--loading {
+    @extend %disabled-styles;
   }
 
-  :deep(.--before),
-  :deep(.--after) {
-    display: flex;
+  .loader-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    @include flex(row, center, center);
+
+    :deep(.ui-spinner) {
+      border-top-color: map-get($neutral, 80);
+    }
   }
 
-  &.ui-button {
-    font-weight: 600;
-    color: map-get($neutral, 80);
-    background-color: transparent;
-
-    &.--active {
-      color: map-get($neutral, 120);
-    }
-
-    &.--primary {
-      @include tab-styles($primary);
-    }
-
-    &.--error {
-      @include tab-styles($error);
-    }
-
-    &.--secondary {
-      @include tab-styles($secondary);
-    }
-
-    &.--neutral {
-      @include tab-styles($neutral);
-    }
-
-    &.--success {
-      @include tab-styles($success);
-    }
-
-    &:hover {
-      background-color: initial;
-    }
-
-    &:active {
-      transform: none;
-    }
-
-    &:not(:first-child):not(:last-child) {
-      border-radius: initial;
-    }
-
-    &:first-child {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-
-    &:last-child {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
+  &.--loading {
+    .--before,
+    .--default,
+    .--after {
+      visibility: hidden;
     }
   }
 }

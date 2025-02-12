@@ -1,9 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import VIcon from "@/components/Icon/VIcon.vue";
 import { shallowRef } from "vue";
-import { Person, CloseIcon, Search, DuplicateIcon } from "@/shared/icons";
+import { Person, Search, DuplicateIcon } from "@/shared/icons";
 import VTabs from "@/components/Tabs/VTabs.vue";
 import VTab from "@/components/Tabs/VTab.vue";
+import { COLORS_OPTIONS, SIZE_OPTIONS } from "@/shared/constants";
+import { VARIANT_TABS_OPTIONS } from "@/components/Tabs/VTabs.types";
 
 const meta: Meta<typeof VTabs> = {
   title: "Примитивы/Табы",
@@ -17,18 +19,20 @@ type Story = StoryObj<typeof VTabs>;
 
 export const Basic: Story = {
   name: "Стандартный",
-  args: {
-    tabProps: {
-      color: "neutral",
-      size: "s",
+  argTypes: {
+    variant: {
+      options: VARIANT_TABS_OPTIONS,
+      control: { type: "select" },
+    },
+    color: {
+      options: COLORS_OPTIONS,
+      control: { type: "select" },
+    },
+    size: {
+      options: SIZE_OPTIONS,
+      control: { type: "select" },
     },
   },
-  decorators: [
-    () => ({
-      template:
-        '<div style="display: flex; flex-direction: column; gap: 1rem;"><story/></div>',
-    }),
-  ],
   render: (args) => ({
     components: { VTabs, VTab },
     setup() {
@@ -48,10 +52,18 @@ export const Basic: Story = {
 
 export const Disabled: Story = {
   name: "Отключенный",
-  args: {
-    tabProps: {
-      color: "primary",
-      size: "s",
+  argTypes: {
+    variant: {
+      options: VARIANT_TABS_OPTIONS,
+      control: { type: "select" },
+    },
+    color: {
+      options: COLORS_OPTIONS,
+      control: { type: "select" },
+    },
+    size: {
+      options: SIZE_OPTIONS,
+      control: { type: "select" },
     },
   },
   render: (args) => ({
@@ -64,7 +76,7 @@ export const Disabled: Story = {
       <VTabs v-bind="args" v-model="tabs">
         <VTab :value="0">Вкладка 1</VTab>
         <VTab :value="1">Вкладка 2</VTab>
-        <VTab is-disabled :value="2">Отключена</VTab>
+        <VTab is-disabled :value="2">Вкладка 3</VTab>
       </VTabs>
     `,
   }),
@@ -72,10 +84,18 @@ export const Disabled: Story = {
 
 export const Loading: Story = {
   name: "Загрузка",
-  args: {
-    tabProps: {
-      color: "neutral",
-      size: "s",
+  argTypes: {
+    variant: {
+      options: VARIANT_TABS_OPTIONS,
+      control: { type: "select" },
+    },
+    color: {
+      options: COLORS_OPTIONS,
+      control: { type: "select" },
+    },
+    size: {
+      options: SIZE_OPTIONS,
+      control: { type: "select" },
     },
   },
   render: (args) => ({
@@ -88,7 +108,7 @@ export const Loading: Story = {
       <VTabs v-bind="args" v-model="tabs">
         <VTab :value="0">Вкладка 1</VTab>
         <VTab :value="1">Вкладка 2</VTab>
-        <VTab is-loading :value="2">Загрузка</VTab>
+        <VTab is-loading :value="2">Вкладка 3</VTab>
       </VTabs>
     `,
   }),
@@ -97,9 +117,20 @@ export const Loading: Story = {
 export const ChangeColor: Story = {
   name: "Измененный цвет",
   args: {
-    tabProps: {
-      color: "success",
-      size: "s",
+    color: "primary",
+  },
+  argTypes: {
+    variant: {
+      options: VARIANT_TABS_OPTIONS,
+      control: { type: "select" },
+    },
+    color: {
+      options: COLORS_OPTIONS,
+      control: { type: "select" },
+    },
+    size: {
+      options: SIZE_OPTIONS,
+      control: { type: "select" },
     },
   },
   render: (args) => ({
@@ -121,10 +152,20 @@ export const ChangeColor: Story = {
 export const FullWidth: Story = {
   name: "На всю ширину",
   args: {
-    tabProps: {
-      color: "neutral",
-      size: "s",
-      isStretch: true,
+    isStretch: true,
+  },
+  argTypes: {
+    variant: {
+      options: VARIANT_TABS_OPTIONS,
+      control: { type: "select" },
+    },
+    color: {
+      options: COLORS_OPTIONS,
+      control: { type: "select" },
+    },
+    size: {
+      options: SIZE_OPTIONS,
+      control: { type: "select" },
     },
   },
   render: (args) => ({
@@ -146,9 +187,20 @@ export const FullWidth: Story = {
 export const Small: Story = {
   name: "Маленький размер",
   args: {
-    tabProps: {
-      color: "neutral",
-      size: "s",
+    size: "s",
+  },
+  argTypes: {
+    variant: {
+      options: VARIANT_TABS_OPTIONS,
+      control: { type: "select" },
+    },
+    color: {
+      options: COLORS_OPTIONS,
+      control: { type: "select" },
+    },
+    size: {
+      options: SIZE_OPTIONS,
+      control: { type: "select" },
     },
   },
   render: (args) => ({
@@ -170,9 +222,20 @@ export const Small: Story = {
 export const Medium: Story = {
   name: "Средний размер",
   args: {
-    tabProps: {
-      color: "neutral",
-      size: "m",
+    size: "m",
+  },
+  argTypes: {
+    variant: {
+      options: VARIANT_TABS_OPTIONS,
+      control: { type: "select" },
+    },
+    color: {
+      options: COLORS_OPTIONS,
+      control: { type: "select" },
+    },
+    size: {
+      options: SIZE_OPTIONS,
+      control: { type: "select" },
     },
   },
   render: (args) => ({
@@ -194,9 +257,20 @@ export const Medium: Story = {
 export const Large: Story = {
   name: "Больший размер",
   args: {
-    tabProps: {
-      color: "neutral",
-      size: "l",
+    size: "l",
+  },
+  argTypes: {
+    variant: {
+      options: VARIANT_TABS_OPTIONS,
+      control: { type: "select" },
+    },
+    color: {
+      options: COLORS_OPTIONS,
+      control: { type: "select" },
+    },
+    size: {
+      options: SIZE_OPTIONS,
+      control: { type: "select" },
     },
   },
   render: (args) => ({
@@ -217,10 +291,18 @@ export const Large: Story = {
 
 export const WithSlots: Story = {
   name: "Слоты",
-  args: {
-    tabProps: {
-      color: "neutral",
-      size: "s",
+  argTypes: {
+    variant: {
+      options: VARIANT_TABS_OPTIONS,
+      control: { type: "select" },
+    },
+    color: {
+      options: COLORS_OPTIONS,
+      control: { type: "select" },
+    },
+    size: {
+      options: SIZE_OPTIONS,
+      control: { type: "select" },
     },
   },
   render: (args) => ({
@@ -245,14 +327,19 @@ export const WithSlots: Story = {
 
 export const WithIcons: Story = {
   name: "Cлоты с иконками",
-  args: {
-    tabProps: {
-      color: "neutral",
-      size: "s",
+  argTypes: {
+    variant: {
+      options: VARIANT_TABS_OPTIONS,
+      control: { type: "select" },
     },
-  },
-  parameters: {
-    deepControls: { enabled: true },
+    color: {
+      options: COLORS_OPTIONS,
+      control: { type: "select" },
+    },
+    size: {
+      options: SIZE_OPTIONS,
+      control: { type: "select" },
+    },
   },
   render: (args) => ({
     components: { VTabs, VTab, VIcon, Person, DuplicateIcon, Search },

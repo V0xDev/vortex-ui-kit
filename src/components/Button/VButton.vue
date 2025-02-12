@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { VButton, VButtonSlots } from "@/components/Button/VButton.types";
+import type { VButton } from "@/components/Button/VButton.types";
 import VSpinner from "@components/Spinner/VSpinner.vue";
 
 withDefaults(defineProps<VButton>(), {
@@ -7,8 +7,6 @@ withDefaults(defineProps<VButton>(), {
   size: "s",
   isRounded: true,
 });
-
-defineSlots<VButtonSlots>();
 </script>
 
 <template>
