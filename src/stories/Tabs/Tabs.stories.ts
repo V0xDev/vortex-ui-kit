@@ -50,6 +50,78 @@ export const Basic: Story = {
   }),
 };
 
+export const Change: Story = {
+  name: "Другой вариант",
+  args: {
+    variant: "modern",
+  },
+  argTypes: {
+    variant: {
+      options: VARIANT_TABS_OPTIONS,
+      control: { type: "select" },
+    },
+    color: {
+      options: COLORS_OPTIONS,
+      control: { type: "select" },
+    },
+    size: {
+      options: SIZE_OPTIONS,
+      control: { type: "select" },
+    },
+  },
+  render: (args) => ({
+    components: { VTabs, VTab },
+    setup() {
+      const tabs = shallowRef(0);
+      return { args, tabs };
+    },
+    template: `
+    <VTabs v-bind="args" v-model="tabs">
+      <VTab :value="0">Вкладка 1</VTab>
+      <VTab :value="1">Вкладка 2</VTab>
+      <VTab :value="2">Вкладка 3</VTab>
+    </VTabs>
+    <span>Выбранное значение: {{tabs}}</span>
+    `,
+  }),
+};
+
+export const Rounded: Story = {
+  name: "С закруглением",
+  args: {
+    isRounded: true,
+  },
+  argTypes: {
+    variant: {
+      options: VARIANT_TABS_OPTIONS,
+      control: { type: "select" },
+    },
+    color: {
+      options: COLORS_OPTIONS,
+      control: { type: "select" },
+    },
+    size: {
+      options: SIZE_OPTIONS,
+      control: { type: "select" },
+    },
+  },
+  render: (args) => ({
+    components: { VTabs, VTab },
+    setup() {
+      const tabs = shallowRef(0);
+      return { args, tabs };
+    },
+    template: `
+    <VTabs v-bind="args" v-model="tabs">
+      <VTab :value="0">Вкладка 1</VTab>
+      <VTab :value="1">Вкладка 2</VTab>
+      <VTab :value="2">Вкладка 3</VTab>
+    </VTabs>
+    <span>Выбранное значение: {{tabs}}</span>
+    `,
+  }),
+};
+
 export const Disabled: Story = {
   name: "Отключенный",
   argTypes: {
