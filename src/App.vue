@@ -16,5 +16,6 @@
 }
 
 .info-container__wrapper {
+  width: 500px;
 }
 </style>
