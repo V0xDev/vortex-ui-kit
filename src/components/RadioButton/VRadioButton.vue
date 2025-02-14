@@ -29,6 +29,7 @@ const unicId = useId();
 @use "sass:map";
 @use "@/assets/_variables.scss" as *;
 @use "@/assets/_mixins.scss" as *;
+@use "@/assets/_extends.scss" as *;
 
 @mixin radio-styles($color) {
   color: map-get($color, 100);
@@ -60,10 +61,7 @@ const unicId = useId();
   }
 
   &.--disabled {
-    opacity: 50%;
-    cursor: default;
-    pointer-events: none;
-    user-select: none;
+    @extend %disabled-styles;
   }
 
   &.--primary {

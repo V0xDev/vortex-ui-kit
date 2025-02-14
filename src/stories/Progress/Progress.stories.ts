@@ -7,27 +7,31 @@ import VLabel from "@/components/Label/VLabel.vue";
 import { computed, shallowRef, watch } from "vue";
 import VSwitch from "@/components/Switch/VSwitch.vue";
 import { VARIANT_SWITCH_OPTIONS } from "@/components/Switch/VSwitch.types";
+import VProgress from "@/components/Progress/VProgress.vue";
+import { VARIANT_PROGRESS_OPTIONS } from "@/components/Progress/VProgress.types";
 
-const meta: Meta<typeof VSwitch> = {
-  title: "Примитивы/Input/Переключатель",
-  component: VSwitch,
+const meta: Meta<typeof VProgress> = {
+  title: "Примитивы/Прогресс бар",
+  component: VProgress,
   tags: ["autodocs"],
 };
 
 export default meta;
 
-type Story = StoryObj<typeof VSwitch>;
+type Story = StoryObj<typeof VProgress>;
 
 export const Basic: Story = {
   name: "Стандартный",
-  args: {},
+  args: {
+    modelValue: 10,
+  },
   argTypes: {
     color: {
       options: COLORS_OPTIONS,
       control: { type: "select" },
     },
     variant: {
-      options: VARIANT_SWITCH_OPTIONS,
+      options: VARIANT_PROGRESS_OPTIONS,
       control: { type: "select" },
     },
     size: {
@@ -40,7 +44,7 @@ export const Basic: Story = {
 export const ChangeColor: Story = {
   name: "Измененный цвет",
   args: {
-    modelValue: true,
+    modelValue: 10,
     color: "primary",
   },
   argTypes: {
@@ -49,7 +53,7 @@ export const ChangeColor: Story = {
       control: { type: "select" },
     },
     variant: {
-      options: VARIANT_SWITCH_OPTIONS,
+      options: VARIANT_PROGRESS_OPTIONS,
       control: { type: "select" },
     },
     size: {
@@ -62,7 +66,8 @@ export const ChangeColor: Story = {
 export const Rounded: Story = {
   name: "С округлением",
   args: {
-    variant: "rounded",
+    modelValue: 10,
+    isRounded: true,
   },
   argTypes: {
     color: {
@@ -70,7 +75,29 @@ export const Rounded: Story = {
       control: { type: "select" },
     },
     variant: {
-      options: VARIANT_SWITCH_OPTIONS,
+      options: VARIANT_PROGRESS_OPTIONS,
+      control: { type: "select" },
+    },
+    size: {
+      options: SIZE_OPTIONS,
+      control: { type: "select" },
+    },
+  },
+};
+
+export const ChangeVariant: Story = {
+  name: "Другой вариант",
+  args: {
+    modelValue: 10,
+    variant: "modern",
+  },
+  argTypes: {
+    color: {
+      options: COLORS_OPTIONS,
+      control: { type: "select" },
+    },
+    variant: {
+      options: VARIANT_PROGRESS_OPTIONS,
       control: { type: "select" },
     },
     size: {
@@ -83,6 +110,7 @@ export const Rounded: Story = {
 export const Small: Story = {
   name: "Маленький размер",
   args: {
+    modelValue: 10,
     size: "s",
   },
   argTypes: {
@@ -91,7 +119,7 @@ export const Small: Story = {
       control: { type: "select" },
     },
     variant: {
-      options: VARIANT_SWITCH_OPTIONS,
+      options: VARIANT_PROGRESS_OPTIONS,
       control: { type: "select" },
     },
     size: {
@@ -104,6 +132,7 @@ export const Small: Story = {
 export const Medium: Story = {
   name: "Средний размер",
   args: {
+    modelValue: 10,
     size: "m",
   },
   argTypes: {
@@ -112,7 +141,7 @@ export const Medium: Story = {
       control: { type: "select" },
     },
     variant: {
-      options: VARIANT_SWITCH_OPTIONS,
+      options: VARIANT_PROGRESS_OPTIONS,
       control: { type: "select" },
     },
     size: {
@@ -125,6 +154,7 @@ export const Medium: Story = {
 export const Large: Story = {
   name: "Большой размер",
   args: {
+    modelValue: 10,
     size: "l",
   },
   argTypes: {
@@ -133,7 +163,70 @@ export const Large: Story = {
       control: { type: "select" },
     },
     variant: {
-      options: VARIANT_SWITCH_OPTIONS,
+      options: VARIANT_PROGRESS_OPTIONS,
+      control: { type: "select" },
+    },
+    size: {
+      options: SIZE_OPTIONS,
+      control: { type: "select" },
+    },
+  },
+};
+
+export const MaxValue: Story = {
+  name: "Максимальное значение",
+  args: {
+    modelValue: 10,
+    maxValue: 200,
+    size: "s",
+  },
+  decorators: [
+    () => ({
+      template:
+        '<div style="display: flex; flex-direction: column; gap: 0.5rem;"><story/></div>',
+    }),
+  ],
+  argTypes: {
+    color: {
+      options: COLORS_OPTIONS,
+      control: { type: "select" },
+    },
+    variant: {
+      options: VARIANT_PROGRESS_OPTIONS,
+      control: { type: "select" },
+    },
+    size: {
+      options: SIZE_OPTIONS,
+      control: { type: "select" },
+    },
+  },
+  render: (args) => ({
+    components: { VProgress },
+    setup() {
+      return { args };
+    },
+    template: `
+      <VProgress v-bind="args" />
+      <span>prop modelValue: {{ args.modelValue }}</span>
+      <span>prop MaxValue: {{ args.maxValue }}</span>
+    `,
+  }),
+};
+
+export const Disabled: Story = {
+  name: "Отключенный",
+  args: {
+    modelValue: 10,
+    size: "s",
+    isDisabled: true,
+  },
+  argTypes: {
+    color: {
+      options: COLORS_OPTIONS,
+      control: { type: "select" },
+    },
+    variant: {
+      options: VARIANT_PROGRESS_OPTIONS,
       control: { type: "select" },
     },
     size: {
@@ -146,6 +239,7 @@ export const Large: Story = {
 export const BasicSlots: Story = {
   name: "Cлоты",
   args: {
+    modelValue: 10,
     after: "after",
     before: "before",
   },
@@ -155,7 +249,7 @@ export const BasicSlots: Story = {
       control: { type: "select" },
     },
     variant: {
-      options: VARIANT_SWITCH_OPTIONS,
+      options: VARIANT_PROGRESS_OPTIONS,
       control: { type: "select" },
     },
     size: {
@@ -168,6 +262,7 @@ export const BasicSlots: Story = {
 export const BasicSlotsWithIcons: Story = {
   name: "Cлоты с иконками",
   args: {
+    modelValue: 10,
     size: "s",
   },
   argTypes: {
@@ -176,7 +271,7 @@ export const BasicSlotsWithIcons: Story = {
       control: { type: "select" },
     },
     variant: {
-      options: VARIANT_SWITCH_OPTIONS,
+      options: VARIANT_PROGRESS_OPTIONS,
       control: { type: "select" },
     },
     size: {
@@ -185,16 +280,12 @@ export const BasicSlotsWithIcons: Story = {
     },
   },
   render: (args) => ({
-    components: { VSwitch, VLabel, VIcon, CloseIcon, DuplicateIcon },
+    components: { VProgress, VLabel, VIcon, CloseIcon, DuplicateIcon },
     setup() {
-      const switchValue = shallowRef(true);
-
-      watch(switchValue, (v) => console.log(v));
-
-      return { args, switchValue };
+      return { args };
     },
     template: `
-      <VSwitch v-model="switchValue" v-bind="args">
+      <VProgress v-model="switchValue" v-bind="args">
         <template #before>
           <VIcon width="24px">
             <DuplicateIcon />
@@ -205,7 +296,7 @@ export const BasicSlotsWithIcons: Story = {
             <CloseIcon />
           </VIcon>
         </template>
-      </VSwitch>
+      </VProgress>
     `,
   }),
 };
