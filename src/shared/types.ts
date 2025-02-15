@@ -11,5 +11,4 @@ export type VTabsVariant = keyof typeof Color;
 export type SizeMode = keyof typeof BaseSize;
 export type FontSizeMode = keyof typeof Size;
 
-export type InstanceVAccordion = InstanceType<typeof VAccordion>;
 export type Maybe<T> = T | null;
