@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import VButton from "@/components/Button/VButton.vue";
-import { COLORS_OPTIONS, SIZE_OPTIONS } from "@/shared/constants";
+import { COLORS_OPTIONS, BASE_SIZE_OPTIONS } from "@/shared/constants";
 import VIcon from "@/components/Icon/VIcon.vue";
 import DuplicateIcon from "@/shared/icons/DuplicateIcon.vue";
 import CloseIcon from "@/shared/icons/CloseIcon.vue";
@@ -30,7 +30,7 @@ export const Basic: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -52,7 +52,7 @@ export const BasicDisabled: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -74,7 +74,7 @@ export const Outline: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -95,7 +95,7 @@ export const Rounded: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -116,7 +116,7 @@ export const Loading: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -138,7 +138,7 @@ export const FullWidth: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -159,7 +159,7 @@ export const Small: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -180,7 +180,7 @@ export const Medium: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -201,7 +201,7 @@ export const Large: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -224,7 +224,7 @@ export const BasicSlots: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -244,7 +244,7 @@ export const BasicSlotsWithIcons: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },

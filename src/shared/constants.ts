@@ -6,13 +6,13 @@ export enum Color {
   "neutral" = "#707070",
 }
 
-export enum Size {
+export enum BaseSize {
   s = "small",
   m = "medium",
   l = "large",
 }
 
-export enum FontSize {
+export enum Size {
   s1 = "12px",
   s2 = "14px",
   s3 = "16px",
@@ -27,7 +27,7 @@ export enum FontSize {
 export const COLORS_OPTIONS = Object.keys(Color);
 export const COLORS_VALUES = Object.values(Color);
 
-export const SIZE_OPTIONS = Object.keys(Size);
+export const BASE_SIZE_OPTIONS = Object.keys(BaseSize);
 
-export const FONT_SIZE_OPTIONS = Object.keys(FontSize);
-export const FONT_SIZE_VALUES = Object.values(FontSize);
+export const SIZE_OPTIONS = Object.keys(Size);
+export const SIZE_VALUES = Object.values(Size);

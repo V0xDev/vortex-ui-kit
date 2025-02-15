@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from "@storybook/vue3";
 import {
   Color,
   COLORS_OPTIONS,
-  FONT_SIZE_OPTIONS,
-  FONT_SIZE_VALUES,
+  SIZE_OPTIONS,
+  SIZE_VALUES,
 } from "@/shared/constants";
 import VLabel from "@/components/Label/VLabel.vue";
 
@@ -26,8 +26,8 @@ export const Basic: Story = {
   argTypes: {
     size: {
       control: "select",
-      options: FONT_SIZE_OPTIONS,
-      mapping: FONT_SIZE_VALUES,
+      options: SIZE_OPTIONS,
+      mapping: SIZE_VALUES,
     },
   },
 };
@@ -41,8 +41,8 @@ export const ChangeSize: Story = {
   argTypes: {
     size: {
       control: "select",
-      options: FONT_SIZE_OPTIONS,
-      mapping: FONT_SIZE_VALUES,
+      options: SIZE_OPTIONS,
+      mapping: SIZE_VALUES,
     },
   },
 };
@@ -57,8 +57,8 @@ export const ChangeColor: Story = {
   argTypes: {
     size: {
       control: "select",
-      options: FONT_SIZE_OPTIONS,
-      mapping: FONT_SIZE_VALUES,
+      options: SIZE_OPTIONS,
+      mapping: SIZE_VALUES,
     },
   },
 };
@@ -73,8 +73,8 @@ export const ChangeColorV2: Story = {
   argTypes: {
     size: {
       control: "select",
-      options: FONT_SIZE_OPTIONS,
-      mapping: FONT_SIZE_VALUES,
+      options: SIZE_OPTIONS,
+      mapping: SIZE_VALUES,
     },
     color: {
       control: "select",
