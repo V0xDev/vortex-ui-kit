@@ -103,10 +103,7 @@ export const WithLabel: Story = {
     inputParams: {
       placeholder: "Введите логин",
     },
-    textParams: {
-      size: "s2",
-      label: "Логин",
-    },
+    default: "Логин",
     modelValue: "Elon",
   },
   argTypes: {
@@ -313,10 +310,7 @@ export const WithIcons: Story = {
     isStretch: false,
     size: "s",
     color: "success",
-    textParams: {
-      label: "Логин",
-      size: "s2",
-    },
+    default: "Логин",
     inputParams: {
       placeholder: "Введите логин",
     },
@@ -356,10 +350,7 @@ export const WithIconsV2: Story = {
     isRounded: false,
     isStretch: false,
     size: "s",
-    textParams: {
-      label: "Пароль",
-      size: "s2",
-    },
+    default: "Логин",
     inputParams: {
       placeholder: "Введите пароль",
     },
@@ -415,10 +406,7 @@ export const WithIconsV3: Story = {
     isRounded: false,
     isStretch: false,
     size: "s",
-    textParams: {
-      label: "Поиск",
-      size: "s2",
-    },
+    default: "Логин",
     inputParams: {
       placeholder: "Введите что нибудь",
     },

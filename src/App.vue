@@ -1,16 +1,25 @@
 <script setup lang="ts">
-import VLabel from "./components/Label/VLabel.vue";
-import VLink from "./components/Link/VLink.vue";
+import { shallowRef } from "vue";
+import VTextarea from "./components/Textarea/VTextarea.vue";
+import VInput from "./components/Input/VInput.vue";
+
+const value = shallowRef("");
 </script>
 
 <template>
   <div class="info-container">
     <div class="info-container__wrapper">
-      <VLink href="#" target="_blank">
-        <template #before>before</template>
-        <VLabel color="blue" size="s3">Ссылка</VLabel>
-        <template #after>after</template>
-      </VLink>
+      <!-- <VTextarea
+        v-model="value"
+        placeholder="фыв"
+        color="primary"
+        readonly
+        is-stretch
+        is-rounded
+      >
+        <template #before> before </template>
+        <template #after> after </template>
+      </VTextarea> -->
     </div>
   </div>
 </template>
@@ -26,6 +35,6 @@ import VLink from "./components/Link/VLink.vue";
 
 .info-container__wrapper {
   width: 500px;
-  height: 500px;
+  height: 300px;
 }
 </style>
