@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import { COLORS_OPTIONS, SIZE_OPTIONS } from "@/shared/constants";
+import { COLORS_OPTIONS, BASE_SIZE_OPTIONS } from "@/shared/constants";
 import VRadioButton from "@/components/RadioButton/VRadioButton.vue";
 import { ref } from "vue";
 import { GenericMeta } from "@/shared/types";
@@ -150,7 +150,7 @@ export const BasicDisabled: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
     modelValue: {
@@ -177,7 +177,7 @@ export const ChangeColor: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
     modelValue: {
@@ -204,7 +204,7 @@ export const Small: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
     modelValue: {
@@ -231,7 +231,7 @@ export const Medium: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
     modelValue: {
@@ -258,7 +258,7 @@ export const Large: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
     modelValue: {

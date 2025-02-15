@@ -17,5 +17,6 @@
 
 .info-container__wrapper {
   width: 500px;
+  height: 500px;
 }
 </style>

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import { COLORS_OPTIONS, SIZE_OPTIONS } from "@/shared/constants";
+import { COLORS_OPTIONS, BASE_SIZE_OPTIONS } from "@/shared/constants";
 import VIcon from "@/components/Icon/VIcon.vue";
 import VInput from "@/components/Input/VInput.vue";
 import { HTMLInputTypeAttribute } from "@/components/Input/VInput.types";
@@ -43,7 +43,7 @@ export const Basic: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -66,7 +66,7 @@ export const Disabled: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -89,7 +89,7 @@ export const Readonly: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -115,7 +115,7 @@ export const WithLabel: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -138,7 +138,7 @@ export const ChangeType: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -161,7 +161,7 @@ export const ChangeColor: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -183,7 +183,7 @@ export const Rounded: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -205,7 +205,7 @@ export const FullWidth: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -228,7 +228,7 @@ export const Small: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -251,7 +251,7 @@ export const Medium: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -274,7 +274,7 @@ export const Large: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -299,7 +299,7 @@ export const WithSlots: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -327,7 +327,7 @@ export const WithIcons: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -370,7 +370,7 @@ export const WithIconsV2: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
@@ -429,7 +429,7 @@ export const WithIconsV3: Story = {
       control: { type: "select" },
     },
     size: {
-      options: SIZE_OPTIONS,
+      options: BASE_SIZE_OPTIONS,
       control: { type: "select" },
     },
   },
