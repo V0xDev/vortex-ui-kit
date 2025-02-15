@@ -1,18 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import {
-  COLORS_OPTIONS,
-  BASE_SIZE_OPTIONS,
-  SIZE_OPTIONS,
-  SIZE_VALUES,
-  Size,
-} from "@/shared/constants";
-import VIcon from "@/components/Icon/VIcon.vue";
-import DuplicateIcon from "@/shared/icons/DuplicateIcon.vue";
-import CloseIcon from "@/shared/icons/CloseIcon.vue";
-import VLabel from "@/components/Label/VLabel.vue";
-import { computed, shallowRef, watch } from "vue";
-import VSwitch from "@/components/Switch/VSwitch.vue";
-import { VARIANT_SWITCH_OPTIONS } from "@/components/Switch/VSwitch.types";
+import { COLORS_OPTIONS, SIZE_VALUES, Size } from "@/shared/constants";
 import VCard from "@/components/Card/VCard.vue";
 
 const meta: Meta<typeof VCard> = {
