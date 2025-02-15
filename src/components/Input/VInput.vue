@@ -1,4 +1,4 @@
-<script setup lang="ts" generic="T">
+<script setup lang="ts">
 import { computed } from "vue";
 import { VInput } from "./VInput.types";
 import VLoader from "@/components/Loader/VLoader.vue";
@@ -15,7 +15,10 @@ const mergedProps = computed<VInput["inputParams"] | VInput>(() => ({
   ...props.inputParams,
 }));
 
-const modelValue = defineModel<T | null>({ required: true, default: null });
+const modelValue = defineModel<string | null>({
+  required: true,
+  default: null,
+});
 </script>
 
 <template>

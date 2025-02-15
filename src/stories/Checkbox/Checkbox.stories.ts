@@ -4,7 +4,7 @@ import VCheckbox from "@/components/Checkbox/VCheckbox.vue";
 import { GenericMeta } from "@/shared/types";
 
 const meta = {
-  title: "Примитивы/Чекбокс/Стандартный",
+  title: "Примитивы/Чекбокс",
   component: VCheckbox,
 } satisfies GenericMeta<typeof VCheckbox>;
 

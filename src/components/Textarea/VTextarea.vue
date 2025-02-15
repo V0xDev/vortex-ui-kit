@@ -3,7 +3,7 @@ import { useId } from "vue";
 import { VTextarea } from "./VTextarea.types";
 
 withDefaults(defineProps<VTextarea>(), {
-  size: "l",
+  size: "s",
   color: "neutral",
   resize: "both",
   isStretch: false,
@@ -35,6 +35,11 @@ defineExpose({
     <textarea
       v-bind="$attrs"
       v-model="modelValue"
+      :placeholder="placeholder"
+      :readonly="readonly"
+      :disabled="disabled"
+      :spellcheck="spellcheck"
+      :autofocus="autofocus"
       :maxlength="maxLength"
       :id="unicId"
       :name="unicId"
@@ -114,6 +119,15 @@ defineExpose({
     max-height: 100%;
   }
 
+  textarea {
+    padding: map-get($spacing, small_3x) map-get($spacing, small_3x);
+  }
+
+  &.--stretch textarea {
+    width: 100%;
+    height: 100%;
+  }
+
   &.--rounded,
   &.--rounded textarea {
     border-radius: $base-rounded;
@@ -133,12 +147,6 @@ defineExpose({
 
   &.--horizontal {
     @include set-resize(horizontal);
-  }
-
-  &.--stretch,
-  textarea {
-    width: 100%;
-    height: 100%;
   }
 
   &.--primary {
