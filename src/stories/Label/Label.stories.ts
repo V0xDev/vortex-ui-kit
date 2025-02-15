@@ -21,7 +21,6 @@ export const Basic: Story = {
   name: "Стандартный текст",
   args: {
     size: "s1",
-    label: "Текст размера s1",
   },
   argTypes: {
     size: {
@@ -30,13 +29,23 @@ export const Basic: Story = {
       mapping: SIZE_VALUES,
     },
   },
+  render: (args) => ({
+    components: { VLabel },
+    setup() {
+      return { args };
+    },
+    template: `
+      <VLabel v-bind="args">
+        Текст размера s1
+      </VLabel>
+    `,
+  }),
 };
 
 export const ChangeSize: Story = {
   name: "Измененный размер",
   args: {
     size: "s3",
-    label: "Можно выбрать любой размер (пропс size)",
   },
   argTypes: {
     size: {
@@ -45,13 +54,23 @@ export const ChangeSize: Story = {
       mapping: SIZE_VALUES,
     },
   },
+  render: (args) => ({
+    components: { VLabel },
+    setup() {
+      return { args };
+    },
+    template: `
+      <VLabel v-bind="args">
+        Можно выбрать любой размер (пропс size)
+      </VLabel>
+    `,
+  }),
 };
 
 export const ChangeColor: Story = {
   name: "Измененный цвет",
   args: {
     size: "s3",
-    label: "Можно выбрать любой цвет (пропс color)",
     color: "#0066d0",
   },
   argTypes: {
@@ -61,13 +80,23 @@ export const ChangeColor: Story = {
       mapping: SIZE_VALUES,
     },
   },
+  render: (args) => ({
+    components: { VLabel },
+    setup() {
+      return { args };
+    },
+    template: `
+      <VLabel v-bind="args">
+        Можно выбрать любой цвет (пропс color)
+      </VLabel>
+    `,
+  }),
 };
 
 export const ChangeColorV2: Story = {
   name: "Цвет из Enum",
   args: {
     size: "s3",
-    label: "Можно выбрать любой цвет (пропс color) подставив enum",
     color: "#0066d0",
   },
   argTypes: {
@@ -82,4 +111,15 @@ export const ChangeColorV2: Story = {
       mapping: Color,
     },
   },
+  render: (args) => ({
+    components: { VLabel },
+    setup() {
+      return { args };
+    },
+    template: `
+      <VLabel v-bind="args">
+        Можно выбрать любой цвет (пропс color) подставив enum
+      </VLabel>
+    `,
+  }),
 };

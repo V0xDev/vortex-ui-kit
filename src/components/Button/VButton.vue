@@ -42,6 +42,7 @@ withDefaults(defineProps<VButton>(), {
 @use "sass:map";
 @use "@/assets/_variables.scss" as *;
 @use "@/assets/_mixins.scss" as *;
+@use "@/assets/_extends.scss" as *;
 
 @mixin button-styles($backColor) {
   background-color: map-get($backColor, 100);

@@ -8,12 +8,15 @@ withDefaults(defineProps<VLabel>(), {
 
 <template>
   <span class="ui-label" :class="['--' + size]">
-    <template v-if="$slots.default">
+    <div v-if="$slots.before" class="--before">
+      <slot name="before" />
+    </div>
+    <div v-if="$slots.default" class="--default">
       <slot name="default" />
-    </template>
-    <template v-else="label">
-      {{ label }}
-    </template>
+    </div>
+    <div v-if="$slots.after" class="--after">
+      <slot name="after" />
+    </div>
   </span>
 </template>
 
