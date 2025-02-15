@@ -13,15 +13,11 @@ import { useDebouncedField } from "@/shared/hooks/useRefDebounced";
 import VLabel from "@/components/Label/VLabel.vue";
 import { CloseIcon } from "@/shared/icons";
 
-type GenericMeta<C> = Omit<Meta<C>, "component"> & {
-  component: Record<keyof C, unknown>;
-};
-
-const meta = {
+const meta: Meta<typeof VInput> = {
   title: "Примитивы/Input/Поле",
   component: VInput,
   tags: ["autodocs"],
-} satisfies GenericMeta<typeof VInput>;
+};
 
 export default meta;
 
@@ -31,6 +27,28 @@ export const Basic: Story = {
   name: "Стандартный",
   args: {
     modelValue: "",
+    isRounded: false,
+    isStretch: false,
+    inputParams: {
+      placeholder: "Введите логин",
+    },
+  },
+  argTypes: {
+    color: {
+      options: COLORS_OPTIONS,
+      control: { type: "select" },
+    },
+    size: {
+      options: BASE_SIZE_OPTIONS,
+      control: { type: "select" },
+    },
+  },
+};
+
+export const Default: Story = {
+  name: "По умолчанию",
+  args: {
+    modelValue: "Elon Mask",
     isRounded: false,
     isStretch: false,
     inputParams: {
@@ -103,10 +121,7 @@ export const WithLabel: Story = {
     inputParams: {
       placeholder: "Введите логин",
     },
-    textParams: {
-      size: "s2",
-      label: "Логин",
-    },
+    default: "Логин",
     modelValue: "Elon",
   },
   argTypes: {
@@ -313,10 +328,7 @@ export const WithIcons: Story = {
     isStretch: false,
     size: "s",
     color: "success",
-    textParams: {
-      label: "Логин",
-      size: "s2",
-    },
+    default: "Логин",
     inputParams: {
       placeholder: "Введите логин",
     },
@@ -356,10 +368,7 @@ export const WithIconsV2: Story = {
     isRounded: false,
     isStretch: false,
     size: "s",
-    textParams: {
-      label: "Пароль",
-      size: "s2",
-    },
+    default: "Логин",
     inputParams: {
       placeholder: "Введите пароль",
     },
@@ -415,10 +424,7 @@ export const WithIconsV3: Story = {
     isRounded: false,
     isStretch: false,
     size: "s",
-    textParams: {
-      label: "Поиск",
-      size: "s2",
-    },
+    default: "Логин",
     inputParams: {
       placeholder: "Введите что нибудь",
     },

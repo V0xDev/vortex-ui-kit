@@ -1,7 +1,6 @@
-<script setup lang="ts" generic="T">
+<script setup lang="ts">
 import { computed } from "vue";
 import { VInput } from "./VInput.types";
-import VLabel from "../Label/VLabel.vue";
 import VLoader from "@/components/Loader/VLoader.vue";
 
 const props = withDefaults(defineProps<VInput>(), {
@@ -16,11 +15,10 @@ const mergedProps = computed<VInput["inputParams"] | VInput>(() => ({
   ...props.inputParams,
 }));
 
-const modelValue = defineModel<T | null>({ required: true, default: null });
-
-const isValidTextParamsProps = computed(
-  () => props.textParams && props.textParams.label
-);
+const modelValue = defineModel<string | null>({
+  required: true,
+  default: null,
+});
 </script>
 
 <template>
@@ -33,8 +31,8 @@ const isValidTextParamsProps = computed(
       { '--rounded': isRounded },
     ]"
   >
-    <div v-if="isValidTextParamsProps" class="--label">
-      <VLabel v-bind="props.textParams" />
+    <div v-if="$slots.default" class="--label">
+      <slot />
     </div>
     <div class="ui-input__wrapper">
       <div v-if="$slots.before" class="--before">
@@ -83,6 +81,7 @@ $inputPadding: 33px;
     &:disabled,
     &[readonly] {
       background-color: map-get($color, 10);
+      pointer-events: stroke;
     }
   }
 

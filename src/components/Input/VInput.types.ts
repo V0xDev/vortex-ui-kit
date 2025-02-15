@@ -17,7 +17,6 @@ type PermittedInputAttributes = InputHTMLAttributes & {
 export interface VInput {
   size?: SizeMode;
   color?: ColorMode;
-  textParams?: VLabel;
   inputParams?: Partial<PermittedInputAttributes>;
   isLoading?: boolean;
   isStretch?: boolean;

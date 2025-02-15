@@ -36,8 +36,7 @@ withDefaults(defineProps<VLink>(), {
 .ui-link {
   width: fit-content;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  align-items: end;
   gap: map-get($spacing, small_3x);
   color: currentColor;
   text-decoration: none;

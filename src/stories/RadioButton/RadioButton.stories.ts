@@ -9,7 +9,7 @@ interface SelectRadio {
 }
 
 const meta = {
-  title: "Примитивы/Input/Радиокнопка/Стандартный",
+  title: "Примитивы/Input/Радиокнопка",
   component: VRadioButton,
   tags: ["autodocs"],
 } satisfies GenericMeta<typeof VRadioButton<SelectRadio>>;
