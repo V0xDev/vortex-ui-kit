@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import VAccordion from "@/components/Accordion/VAccordion.vue";
-import { onMounted, ref } from "vue";
-import { InstanceVAccordion, Maybe } from "@/shared/types";
+import { shallowRef } from "vue";
 
 const meta: Meta<typeof VAccordion> = {
   title: "Примитивы/Аккордеон",
@@ -21,11 +20,10 @@ export const BasicWithSlots: Story = {
     }),
   ],
   args: {
-    label: "Текст аккордеона",
-    buttonProps: {
-      color: "primary",
-      size: "s",
-    },
+    title: "Текст аккордеона",
+    color: "neutral",
+    size: "s",
+    modelValue: false,
     default: "Содержимое аккордеона 1",
   },
 };
@@ -38,27 +36,12 @@ export const BasicDefaultState: Story = {
     }),
   ],
   args: {
-    label: "Текст аккордеона",
-    buttonProps: {
-      color: "primary",
-      size: "s",
-    },
+    title: "Текст аккордеона",
+    color: "neutral",
+    size: "s",
+    modelValue: true,
+    default: "Содержимое аккордеона 1",
   },
-  render: (args) => ({
-    components: { VAccordion },
-    setup() {
-      const VAccordionRef = ref<Maybe<InstanceVAccordion>>(null);
-      onMounted(() => {
-        VAccordionRef.value.open = true;
-      });
-      return { args, VAccordionRef };
-    },
-    template: `
-      <VAccordion v-bind="args" ref="VAccordionRef">
-        <template #default>Содержимое аккордеона 1</template>
-      </VAccordion>
-    `,
-  }),
 };
 
 export const ChangeColor: Story = {
@@ -69,28 +52,67 @@ export const ChangeColor: Story = {
     }),
   ],
   args: {
-    label: "Текст аккордеона",
-    buttonProps: {
-      color: "success",
-      size: "s",
-    },
+    title: "Текст аккордеона",
+    color: "primary",
+    size: "s",
     default: "Содержимое аккордеона 1",
   },
 };
 
-export const ChangeSize: Story = {
-  name: "Измененный размер",
+export const Small: Story = {
+  name: "Маленький размер",
   decorators: [
     () => ({
       template: '<div style="width: 500px;"><story/></div>',
     }),
   ],
   args: {
-    label: "Текст аккордеона",
-    buttonProps: {
-      color: "primary",
-      size: "l",
-    },
+    title: "Текст аккордеона",
+    color: "neutral",
+    size: "s",
     default: "Содержимое аккордеона 1",
   },
 };
+
+export const Middle: Story = {
+  name: "Средний размер",
+  decorators: [
+    () => ({
+      template: '<div style="width: 500px;"><story/></div>',
+    }),
+  ],
+  args: {
+    title: "Текст аккордеона",
+    color: "neutral",
+    size: "m",
+    default: "Содержимое аккордеона 1",
+  },
+};
+
+export const Large: Story = {
+  name: "Большой размер",
+  decorators: [
+    () => ({
+      template: '<div style="width: 500px;"><story/></div>',
+    }),
+  ],
+  args: {
+    title: "Текст аккордеона",
+    color: "neutral",
+    size: "l",
+    default: "Содержимое аккордеона 1",
+  },
+};
+
+// export const BasicSlots: Story = {
+//   name: "Слоты",
+//   decorators: [
+//     () => ({
+//       template: '<div style="width: 500px;"><story/></div>',
+//     }),
+//   ],
+//   args: {
+//     color: "neutral",
+//     size: "s",
+//   },
+// };

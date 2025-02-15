@@ -1,38 +1,42 @@
 <script setup lang="ts">
+//TODO: доработать, сделать самостоятельным компонентом,
+// добавить проп максимальной ширины, сделать анимацию открывания/закрывания
+// добавить before-after слоты внутри title
+
 import ArrowUp from "@/shared/icons/ArrowUp.vue";
 import VButton from "../Button/VButton.vue";
 import VIcon from "../Icon/VIcon.vue";
 import ArrowDown from "@/shared/icons/ArrowDown.vue";
 import { VAccordion } from "@/components/Accordion/VAccordion.type";
-import { shallowRef } from "vue";
 
-defineProps<VAccordion>();
+const props = defineProps<VAccordion>();
 
-const open = shallowRef(false);
-
-defineExpose({
-  open,
-});
+const modelValue = defineModel({ required: true, default: false });
 </script>
 
 <template>
-  <div class="ui-accordion-item" :class="{ '--active': open }">
+  <div class="ui-accordion-item" :class="{ '--active': modelValue }">
     <VButton
-      v-bind="buttonProps"
+      v-bind="props"
       is-stretch
       class="accordion-button"
-      @click="open = !open"
+      @click="modelValue = !modelValue"
     >
-      <template #default> {{ label }} </template>
+      <template #default>
+        <slot name="title" />
+      </template>
       <template #after>
         <VIcon>
-          <ArrowUp v-if="open" />
+          <ArrowUp v-if="modelValue" />
           <ArrowDown v-else />
         </VIcon>
       </template>
     </VButton>
-    <div v-if="$slots.default" v-show="open" class="accordion-panel">
+    <div v-if="$slots.default" v-show="modelValue" class="accordion-panel">
       <slot name="default" />
+    </div>
+    <div v-show="modelValue" class="accordion-panel" v-else>
+      Данных пока нет...
     </div>
   </div>
 </template>
