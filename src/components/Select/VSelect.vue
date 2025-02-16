@@ -1,5 +1,5 @@
 <script setup lang="ts" generic="T">
-import { ref, computed, useId, shallowRef } from "vue";
+import { computed, shallowRef } from "vue";
 import VIcon from "@/components/Icon/VIcon.vue";
 import { CloseIcon } from "@/shared/icons";
 import ArrowDown from "@/shared/icons/ArrowDown.vue";
@@ -14,36 +14,27 @@ const props = withDefaults(defineProps<VSelect<T>>(), {
   color: "neutral",
   size: "m",
   maxWidth: "400px",
+  placeholder: "Выберите значение",
   isRounded: true,
   isStretch: true,
 });
 
-const emits = defineEmits<VSelectEmits>();
-
 const modelValue = defineModel<SelectOption<T>>();
-const isOpen = shallowRef(false);
-const unicId = useId();
+const isOpen = defineModel("is-open", { default: false });
 
 const selectOption = (value: SelectOption<T>) => {
   modelValue.value = value;
   isOpen.value = false;
-  emits("is-open", isOpen.value);
 };
 
 const clearSelection = () => {
   modelValue.value = null;
   isOpen.value = false;
-  emits("is-open", isOpen.value);
 };
 
 const onDisplayClick = () => {
   isOpen.value = !isOpen.value;
-  emits("is-open", isOpen.value);
 };
-
-const placeholderValue = computed(
-  () => props.placeholder ?? "Выберите значение"
-);
 
 const isValidOptions = computed(
   () => !props.options || props.options.length === 0
@@ -70,14 +61,14 @@ const isButtonClose = computed(() => props.isButtonClear && modelValue.value);
     <div v-if="$slots.before" class="--before">
       <slot name="before" />
     </div>
-    <label v-if="label" class="--label" :for="unicId">{{ label }}</label>
+    <label v-if="label" class="--label">{{ label }}</label>
     <div class="ui-select__wrapper">
-      <div class="selected-value" :id="unicId">
+      <div class="selected-value">
         <span v-if="modelValue" class="--label">
           {{ modelValue.display }}
         </span>
         <span v-else class="--placeholder --label">
-          {{ placeholderValue }}
+          {{ placeholder }}
         </span>
       </div>
 
