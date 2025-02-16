@@ -443,7 +443,9 @@ export const WithIconsV3: Story = {
     components: { VInput, VIcon, Search, VLabel, CloseIcon },
     setup() {
       const { value: searchValue, debounced: searchDebouncedValue } =
-        useDebouncedField<string>(700);
+        useDebouncedField<string>({
+          ms: 800,
+        });
 
       const searchCount = ref<number>(0);
       const fetchFakeIsLoading = ref<boolean>(false);

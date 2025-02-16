@@ -1,9 +1,16 @@
 import { refDebounced } from "@vueuse/core";
-import { MaybeRefOrGetter, ref } from "vue";
+import { MaybeRefOrGetter, Ref, ref } from "vue";
 
-export function useDebouncedField<T>(ms: MaybeRefOrGetter<number> = 800) {
-  const value = ref<T>();
-  const debounced = refDebounced<T>(value, ms);
+type UseDebouncedArgs<T> = {
+  ms?: MaybeRefOrGetter<number>;
+  defaultValue?: T;
+};
+
+export function useDebouncedField<T = undefined>(
+  args: UseDebouncedArgs<T> = { ms: 750 }
+) {
+  const value = ref(args.defaultValue) as Ref<T>;
+  const debounced = refDebounced<T>(value, args.ms);
 
   return { value, debounced };
 }
