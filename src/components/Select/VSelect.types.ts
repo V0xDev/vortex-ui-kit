@@ -19,7 +19,3 @@ export interface VSelect<T> {
   isDisabled?: boolean;
   isLoading?: boolean;
 }
-
-export interface VSelectEmits {
-  (e: "is-open", v: boolean);
-}
