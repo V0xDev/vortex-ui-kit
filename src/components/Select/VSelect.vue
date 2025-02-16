@@ -3,11 +3,7 @@ import { computed, shallowRef } from "vue";
 import VIcon from "@/components/Icon/VIcon.vue";
 import { CloseIcon } from "@/shared/icons";
 import ArrowDown from "@/shared/icons/ArrowDown.vue";
-import {
-  SelectOption,
-  VSelectEmits,
-  type VSelect,
-} from "@/components/Select/VSelect.types";
+import { SelectOption, type VSelect } from "@/components/Select/VSelect.types";
 import VLoader from "../Loader/VLoader.vue";
 
 const props = withDefaults(defineProps<VSelect<T>>(), {
