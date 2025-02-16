@@ -1,5 +1,5 @@
 <script setup lang="ts" generic="T">
-import { ref, computed, useId } from "vue";
+import { ref, computed, useId, shallowRef } from "vue";
 import VIcon from "@/components/Icon/VIcon.vue";
 import { CloseIcon } from "@/shared/icons";
 import ArrowDown from "@/shared/icons/ArrowDown.vue";
@@ -21,7 +21,7 @@ const props = withDefaults(defineProps<VSelect<T>>(), {
 const emits = defineEmits<VSelectEmits>();
 
 const modelValue = defineModel<SelectOption<T>>();
-const isOpen = ref(false);
+const isOpen = shallowRef(false);
 const unicId = useId();
 
 const selectOption = (value: SelectOption<T>) => {
@@ -40,6 +40,10 @@ const onDisplayClick = () => {
   isOpen.value = !isOpen.value;
   emits("is-open", isOpen.value);
 };
+
+const placeholderValue = computed(
+  () => props.placeholder ?? "Выберите значение"
+);
 
 const isValidOptions = computed(
   () => !props.options || props.options.length === 0
@@ -69,16 +73,12 @@ const isButtonClose = computed(() => props.isButtonClear && modelValue.value);
     <label v-if="label" class="--label" :for="unicId">{{ label }}</label>
     <div class="ui-select__wrapper">
       <div class="selected-value" :id="unicId">
-        <template v-if="modelValue">
-          <span class="--label">
-            {{ modelValue.display }}
-          </span>
-        </template>
-        <template v-else>
-          <span class="--placeholder --label">
-            {{ placeholder }}
-          </span>
-        </template>
+        <span v-if="modelValue" class="--label">
+          {{ modelValue.display }}
+        </span>
+        <span v-else class="--placeholder --label">
+          {{ placeholderValue }}
+        </span>
       </div>
 
       <div class="icons-wrapper">

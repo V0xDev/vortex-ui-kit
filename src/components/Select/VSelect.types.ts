@@ -8,7 +8,7 @@ export type SelectOption<T> = {
 
 export interface VSelect<T> {
   options: SelectOption<T>[];
-  placeholder: string;
+  placeholder?: string;
   label?: string;
   color?: ColorMode;
   size?: SizeMode;
