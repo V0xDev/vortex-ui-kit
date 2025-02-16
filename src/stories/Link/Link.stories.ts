@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import { COLORS_OPTIONS, SIZE_VALUES } from "@/shared/constants";
 import VLink from "@/components/Link/VLink.vue";
-import { computed } from "vue";
 import VLabel from "@/components/Label/VLabel.vue";
 import VIcon from "@/components/Icon/VIcon.vue";
 import CloseIcon from "@/shared/icons/CloseIcon.vue";

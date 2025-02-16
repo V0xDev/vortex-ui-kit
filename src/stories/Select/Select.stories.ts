@@ -1,19 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import { COLORS_OPTIONS, BASE_SIZE_OPTIONS } from "@/shared/constants";
 import VIcon from "@/components/Icon/VIcon.vue";
-import VInput from "@/components/Input/VInput.vue";
-import { HTMLInputTypeAttribute } from "@/components/Input/VInput.types";
-import { VInput as VInputType } from "@/components/Input/VInput.types";
-import { computed, onScopeDispose, ref, toValue, watch } from "vue";
-import EyeOn from "@/shared/icons/EyeOn.vue";
-import EyeOff from "@/shared/icons/EyeOff.vue";
 import Person from "@/shared/icons/Person.vue";
-import Search from "@/shared/icons/Search.vue";
-import { useDebouncedField } from "@/shared/hooks/useRefDebounced";
-import VLabel from "@/components/Label/VLabel.vue";
-import { CloseIcon } from "@/shared/icons";
 import VSelect from "@/components/Select/VSelect.vue";
 import { SelectOption } from "@/components/Select/VSelect.types";
+import { ref } from "vue";
 
 type GenericMeta<C> = Omit<Meta<C>, "component"> & {
   component: Record<keyof C, unknown>;

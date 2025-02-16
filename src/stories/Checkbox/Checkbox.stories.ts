@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/vue3";
+import type { StoryObj } from "@storybook/vue3";
 import { COLORS_OPTIONS, COLORS_VALUES } from "@/shared/constants";
 import VCheckbox from "@/components/Checkbox/VCheckbox.vue";
 import { GenericMeta } from "@/shared/types";

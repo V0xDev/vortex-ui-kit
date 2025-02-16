@@ -4,7 +4,7 @@ import VIcon from "@/components/Icon/VIcon.vue";
 import DuplicateIcon from "@/shared/icons/DuplicateIcon.vue";
 import CloseIcon from "@/shared/icons/CloseIcon.vue";
 import VLabel from "@/components/Label/VLabel.vue";
-import { computed, shallowRef, watch } from "vue";
+import { shallowRef, watch } from "vue";
 import VSwitch from "@/components/Switch/VSwitch.vue";
 import { VARIANT_SWITCH_OPTIONS } from "@/components/Switch/VSwitch.types";
 
