@@ -2,23 +2,24 @@ import type { Meta, StoryObj } from "@storybook/vue3";
 import { COLORS_OPTIONS, BASE_SIZE_OPTIONS } from "@/shared/constants";
 import VIcon from "@/components/Icon/VIcon.vue";
 import Person from "@/shared/icons/Person.vue";
-import VSelect from "@/components/Select/VSelect.vue";
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import { SelectOption } from "@/shared/types";
+import VAutocomplete from "@/components/Autocomplete/VAutocomplete.vue";
+import { useDebouncedField } from "@/shared/hooks/useRefDebounced";
 
 type GenericMeta<C> = Omit<Meta<C>, "component"> & {
   component: Record<keyof C, unknown>;
 };
 
 const meta = {
-  title: "Примитивы/Input/Выбор",
-  component: VSelect,
+  title: "Примитивы/Input/Поиск с выбором",
+  component: VAutocomplete,
   tags: ["autodocs"],
-} satisfies GenericMeta<typeof VSelect>;
+} satisfies GenericMeta<typeof VAutocomplete>;
 
 export default meta;
 
-type Story = StoryObj<typeof VSelect>;
+type Story = StoryObj<typeof VAutocomplete>;
 
 const options: SelectOption<string>[] = [
   {
@@ -152,7 +153,6 @@ export const ChangeColor: Story = {
     isRounded: false,
     isStretch: false,
     placeholder: "Выберите имя",
-    label: "Имя",
     options: options,
     color: "secondary",
   },
@@ -174,7 +174,6 @@ export const Rounded: Story = {
     isRounded: true,
     isStretch: false,
     placeholder: "Выберите имя",
-    label: "Имя",
     options: options,
   },
   argTypes: {
@@ -195,7 +194,6 @@ export const FullWidth: Story = {
     isRounded: false,
     isStretch: true,
     placeholder: "Выберите имя",
-    label: "Имя",
     options: options,
   },
   argTypes: {
@@ -216,7 +214,6 @@ export const Small: Story = {
     isRounded: false,
     isStretch: false,
     placeholder: "Выберите имя",
-    label: "Имя",
     options: options,
     size: "s",
   },
@@ -238,7 +235,6 @@ export const Medium: Story = {
     isRounded: false,
     isStretch: false,
     placeholder: "Выберите имя",
-    label: "Имя",
     options: options,
     size: "m",
   },
@@ -260,7 +256,6 @@ export const Large: Story = {
     isRounded: false,
     isStretch: false,
     placeholder: "Выберите имя",
-    label: "Имя",
     options: options,
     size: "l",
   },
@@ -320,14 +315,26 @@ export const WithIcons: Story = {
     },
   },
   render: (args) => ({
-    components: { VSelect, VIcon, Person },
+    components: { VAutocomplete, VIcon, Person },
     setup() {
-      const select = ref<SelectOption<string>>();
+      const { value: searchValue, debounced: searchDebouncedValue } =
+        useDebouncedField<string>({
+          defaultValue: "",
+        });
 
-      return { args, select };
+      const autocompleteValue = ref<SelectOption<string>>();
+
+      watch(searchDebouncedValue, (v) => console.log(v));
+      watch(autocompleteValue, (v) => console.log(v));
+
+      return { args, searchValue, autocompleteValue };
     },
     template: `
-      <VSelect v-bind="args" v-model="select">
+      <VAutocomplete
+        v-bind="args"
+        v-model="searchValue"
+        v-model:select-value="autocompleteValue"
+      >
         <template #before>
           <div style="display: flex; align-items: center; margin-bottom: 5px;">
             <VIcon>
@@ -342,7 +349,7 @@ export const WithIcons: Story = {
             > {{ display }}
           </div>
         </template>
-      </VSelect>
+      </VAutocomplete>
     `,
   }),
 };
@@ -353,7 +360,6 @@ export const ButtonDelete: Story = {
     isRounded: false,
     isStretch: true,
     placeholder: "Выберите имя",
-    label: "Имя",
     isButtonClear: true,
     options: options,
     size: "s",

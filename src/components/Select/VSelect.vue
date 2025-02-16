@@ -3,13 +3,13 @@ import { computed, shallowRef } from "vue";
 import VIcon from "@/components/Icon/VIcon.vue";
 import { CloseIcon } from "@/shared/icons";
 import ArrowDown from "@/shared/icons/ArrowDown.vue";
-import { SelectOption, type VSelect } from "@/components/Select/VSelect.types";
+import { type VSelect } from "@/components/Select/VSelect.types";
 import VLoader from "../Loader/VLoader.vue";
+import { SelectOption } from "@/shared/types";
 
 const props = withDefaults(defineProps<VSelect<T>>(), {
   color: "neutral",
-  size: "m",
-  maxWidth: "400px",
+  size: "s",
   placeholder: "Выберите значение",
   isRounded: true,
   isStretch: true,
@@ -91,7 +91,7 @@ const isButtonClose = computed(() => props.isButtonClear && modelValue.value);
       <Transition name="slide-fade">
         <ul v-show="isOpen" class="options-list">
           <li v-if="isValidOptions" class="option-item --no-content">
-            Данных пока нет...
+            <slot name="no-content"> Данных пока нет... </slot>
           </li>
           <li
             v-else
@@ -101,12 +101,9 @@ const isButtonClose = computed(() => props.isButtonClear && modelValue.value);
             :class="{ '--selected': modelValue?.key === key }"
             @click.stop="selectOption({ key, display, raw })"
           >
-            <template v-if="$slots.default">
-              <slot name="default" :key="key" :display="display" :raw="raw" />
-            </template>
-            <template v-else>
+            <slot :key="key" :display="display" :raw="raw">
               {{ display }}
-            </template>
+            </slot>
           </li>
         </ul>
       </Transition>
@@ -195,6 +192,11 @@ const isButtonClose = computed(() => props.isButtonClear && modelValue.value);
   box-sizing: border-box;
   width: fit-content;
   user-select: none;
+
+  .--label {
+    display: block;
+    margin-bottom: map-get($spacing, small_4x);
+  }
 
   &__wrapper {
     position: relative;

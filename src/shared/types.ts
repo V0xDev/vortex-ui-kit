@@ -12,3 +12,22 @@ export type SizeMode = keyof typeof BaseSize;
 export type FontSizeMode = keyof typeof Size;
 
 export type Maybe<T> = T | null;
+
+export type SelectOption<T> = {
+  key: number | string;
+  display: string;
+  raw: T;
+};
+
+export interface VSelectBase<T> {
+  options: SelectOption<T>[];
+  placeholder?: string;
+  label?: string;
+  color?: ColorMode;
+  size?: SizeMode;
+  isButtonClear?: boolean;
+  isRounded?: boolean;
+  isStretch?: boolean;
+  isDisabled?: boolean;
+  isLoading?: boolean;
+}
