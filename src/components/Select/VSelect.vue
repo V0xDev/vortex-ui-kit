@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<VSelect<T>>(), {
   isStretch: true,
 });
 
-const modelValue = defineModel<SelectOption<T>>();
+const modelValue = defineModel<SelectOption<T>>({ required: true });
 const isOpen = defineModel("is-open", { default: false });
 
 const selectOption = (value: SelectOption<T>) => {
