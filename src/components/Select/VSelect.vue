@@ -1,11 +1,12 @@
 <script setup lang="ts" generic="T">
-import { computed, shallowRef } from "vue";
+import { computed, useTemplateRef } from "vue";
 import VIcon from "@/components/Icon/VIcon.vue";
 import { CloseIcon } from "@/shared/icons";
 import ArrowDown from "@/shared/icons/ArrowDown.vue";
 import { type VSelect } from "@/components/Select/VSelect.types";
 import VLoader from "../Loader/VLoader.vue";
 import { SelectOption } from "@/shared/types";
+import { onClickOutside } from "@vueuse/core";
 
 const props = withDefaults(defineProps<VSelect<T>>(), {
   color: "neutral",
@@ -14,6 +15,8 @@ const props = withDefaults(defineProps<VSelect<T>>(), {
   isRounded: true,
   isStretch: true,
 });
+
+const target = useTemplateRef<HTMLElement>("selectRef");
 
 const modelValue = defineModel<SelectOption<T>>({ required: true });
 const isOpen = defineModel("is-open", { default: false });
@@ -37,10 +40,13 @@ const isValidOptions = computed(
 );
 
 const isButtonClose = computed(() => props.isButtonClear && modelValue.value);
+
+onClickOutside(target, (_event) => (isOpen.value = false));
 </script>
 
 <template>
   <div
+    ref="selectRef"
     class="ui-select"
     :class="[
       '--' + color,
@@ -57,7 +63,7 @@ const isButtonClose = computed(() => props.isButtonClear && modelValue.value);
     <div v-if="$slots.before" class="--before">
       <slot name="before" />
     </div>
-    <label v-if="label" class="--label">{{ label }}</label>
+    <label v-if="label" class="--label --title">{{ label }}</label>
     <div class="ui-select__wrapper">
       <div class="selected-value">
         <span v-if="modelValue" class="--label">
@@ -173,6 +179,10 @@ const isButtonClose = computed(() => props.isButtonClear && modelValue.value);
     font-size: map-get($size, $fontSize);
   }
 
+  .--title {
+    margin-bottom: map-get($spacing, small_4x);
+  }
+
   .selected-value {
     padding: $spacingY calc($spacingX + $paddingIcon) $spacingY $spacingX;
   }
@@ -195,7 +205,6 @@ const isButtonClose = computed(() => props.isButtonClear && modelValue.value);
 
   .--label {
     display: block;
-    margin-bottom: map-get($spacing, small_4x);
   }
 
   &__wrapper {
