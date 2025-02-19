@@ -1,11 +1,12 @@
 <script setup lang="ts" generic="T">
-import { computed } from "vue";
+import { computed, useTemplateRef } from "vue";
 import VIcon from "@/components/Icon/VIcon.vue";
 import { CloseIcon } from "@/shared/icons";
 import ArrowDown from "@/shared/icons/ArrowDown.vue";
 import VLoader from "../Loader/VLoader.vue";
 import { SelectOption } from "@/shared/types";
 import { VAutocomplete } from "./VAutocomplete.types";
+import { onClickOutside } from "@vueuse/core";
 
 const props = withDefaults(defineProps<VAutocomplete<T>>(), {
   color: "neutral",
@@ -14,6 +15,8 @@ const props = withDefaults(defineProps<VAutocomplete<T>>(), {
   isRounded: true,
   isStretch: true,
 });
+
+const target = useTemplateRef<HTMLElement>("autocompleteRef");
 
 const modelValue = defineModel<string>({ required: true });
 const selectValue = defineModel<SelectOption<T>>("select-value");
@@ -40,10 +43,13 @@ const isValidOptions = computed(
 );
 
 const isButtonClose = computed(() => props.isButtonClear && modelValue.value);
+
+onClickOutside(target, (_event) => (isOpen.value = false));
 </script>
 
 <template>
   <div
+    ref="autocompleteRef"
     class="ui-select"
     :class="[
       '--' + color,

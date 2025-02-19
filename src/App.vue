@@ -2,11 +2,15 @@
 
 <template>
   <div class="info-container">
-    <div class="info-container__wrapper"></div>
+    <div class="info-container__wrapper">
+      <div class="btns"></div>
+    </div>
   </div>
 </template>
 
-<style scoped>
+<style lang="scss">
+@use "@/assets/_index.scss" as *;
+
 .info-container {
   width: 100%;
   height: 100vh;
