@@ -1,21 +1,12 @@
 <script setup lang="ts">
-import { ColorMode, SizeMode } from "@/shared/types";
 import { computed, useTemplateRef } from "vue";
+import { VSlider } from "./VSlider.types";
 
-withDefaults(
-  defineProps<{
-    isSliderRounded?: boolean;
-    isThumbRounded?: boolean;
-    color?: ColorMode;
-    size?: SizeMode;
-    isStretch?: boolean;
-  }>(),
-  {
-    isStretch: true,
-    color: "neutral",
-    size: "s",
-  }
-);
+withDefaults(defineProps<VSlider>(), {
+  isStretch: true,
+  color: "neutral",
+  size: "s",
+});
 
 const slider = useTemplateRef<HTMLInputElement>("slider");
 
@@ -32,6 +23,11 @@ const [model, modifiers] = defineModel({
 
 const min = computed(() => slider.value?.min ?? 0);
 const max = computed(() => slider.value?.max ?? 0);
+
+defineExpose({
+  min,
+  max,
+});
 </script>
 
 <template>
@@ -43,16 +39,23 @@ const max = computed(() => slider.value?.max ?? 0);
       { '--stretch': isStretch },
       { '--slider-rounded': isSliderRounded },
       { '--thumb-rounded': isThumbRounded },
+      { '--disabled': isDisabled },
     ]"
   >
-    <input ref="slider" type="range" v-model="model" v-bind="$attrs" />
-    <div class="thumb"></div>
+    <slot name="label" :value="model" :minValue="min" :maxValue="max" />
+    <div class="ui-slider__wrapper">
+      <slot name="before" :value="model" :minValue="min" :maxValue="max" />
+      <input ref="slider" type="range" v-model="model" v-bind="$attrs" />
+      <slot name="after" :value="model" :minValue="min" :maxValue="max" />
+    </div>
+    <slot name="output" :value="model" :minValue="min" :maxValue="max" />
   </div>
 </template>
 
 <style lang="scss" scoped>
 @use "sass:map";
 @use "@/assets/_variables.scss" as *;
+@use "@/assets/_extends.scss" as *;
 
 @mixin setSize($customSize) {
   $multiplyHeight: 1.5;
@@ -106,111 +109,82 @@ const max = computed(() => slider.value?.max ?? 0);
       border-color: darken(map-get($color, $intensive), 10%);
     }
   }
+
   input::-webkit-slider-thumb {
     background: map-get($color, 100);
+    transition: hover 0.7 ease;
 
     &:hover {
       background: map-get($color, 120);
-    }
-
-    &::after {
-      content: "12";
-      color: red;
     }
   }
 }
 
 .ui-slider {
+  display: flex;
+  flex-direction: column;
+  gap: map-get($spacing, small_2x);
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: map-get($spacing, small_3x);
+  }
+
+  &.--disabled,
+  &:disabled {
+    @extend %disabled-styles;
+  }
+
+  input::-webkit-slider-thumb,
   input[type="range"] {
     -webkit-appearance: none;
-    appearance: none;
-    cursor: pointer;
-    outline: none;
   }
 
   input[type="range"] {
-    height: 15px;
+    margin: 0;
+    width: min-content;
+  }
+
+  &.--stretch input,
+  input::-webkit-slider-runnable-track {
     width: 100%;
-    background: #ccc;
-    border-radius: 16px;
   }
 
-  /* Track: webkit browsers */
-  input[type="range"]::-webkit-slider-runnable-track {
-    height: 15px;
-    background: #ccc;
-    border-radius: 16px;
+  &.--slider-rounded input::-webkit-slider-runnable-track {
+    border-radius: 4px;
   }
 
-  /* Track: Mozilla Firefox */
-  input[type="range"]::-moz-range-track {
-    height: 15px;
-    background: #ccc;
-    border-radius: 16px;
+  &.--thumb-rounded input::-webkit-slider-thumb {
+    border-radius: 100%;
   }
 
-  /* Thumb: webkit */
-  input[type="range"]::-webkit-slider-thumb {
-    /* removing default appearance */
-    -webkit-appearance: none;
-    appearance: none;
-    /* creating a custom design */
-    height: 15px;
-    width: 15px;
-    background-color: #fff;
-    border-radius: 50%;
-    border: 2px solid #f50;
+  &.--s {
+    @include setSize(small);
   }
 
-  /* Thumb: Firefox */
-  input[type="range"]::-moz-range-thumb {
-    height: 15px;
-    width: 15px;
-    background-color: #fff;
-    border-radius: 50%;
-    border: 1px solid #f50;
+  &.--m {
+    @include setSize(medium);
   }
 
-  input[type="range"]::-webkit-slider-runnable-track {
-    // border-radius: 16px;
+  &.--l {
+    @include setSize(large);
   }
 
-  /* Track: Mozilla Firefox */
-  input[type="range"]::-moz-range-track {
-    // border-radius: 16px;
+  &.--primary {
+    @include setColor($primary);
   }
-
-  input[type="range"]::-webkit-slider-thumb {
-    // border-radius: 50%;
+  &.--error {
+    @include setColor($error);
   }
-
-  input[type="range"]::-moz-range-thumb {
-    // border-radius: 50%;
+  &.--secondary {
+    @include setColor($secondary);
   }
-
-  /* Thumb: webkit */
-  input[type="range"]::-webkit-slider-thumb {
-    /*  ...  */
-    /*  slider progress trick  */
-    box-shadow: -407px 0 0 400px #f50;
+  &.--neutral {
+    @include setColor($neutral);
   }
-
-  /* Thumb: Firefox */
-  input[type="range"]::-moz-range-thumb {
-    /*  ...  */
-    /*  slider progress trick  */
-    box-shadow: -407px 0 0 400px #f50;
-  }
-
-  input[type="range"] {
-    /*  ...  */
-    /*  slider progress trick  */
-    overflow: hidden;
-    border-radius: 16px;
-  }
-
-  .thumb {
-    color: red;
+  &.--success {
+    @include setColor($success);
   }
 }
 </style>
