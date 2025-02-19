@@ -10,10 +10,7 @@ watch(value, (v) => console.log(v));
 <template>
   <div class="info-container">
     <div class="info-container__wrapper">
-      <VSlider v-model.formatNumber="value" :min="0" :max="1000">
-        <template #before-slider="{ minValue }">{{ minValue }}</template>
-        <template #after-slider="{ maxValue }">{{ maxValue }}</template>
-      </VSlider>
+      <VSlider v-model.formatNumber="value" :min="0" :max="1000"> </VSlider>
     </div>
   </div>
 </template>

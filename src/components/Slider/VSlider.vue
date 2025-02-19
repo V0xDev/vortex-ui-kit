@@ -45,13 +45,8 @@ const max = computed(() => slider.value?.max ?? 0);
       { '--thumb-rounded': isThumbRounded },
     ]"
   >
-    <slot name="label" />
-    <div class="ui-slider__wrapper">
-      <slot name="before-slider" :minValue="min" :maxValue="max" />
-      <input ref="slider" type="range" v-model="model" v-bind="$attrs" />
-      <slot name="after-slider" :minValue="min" :maxValue="max" />
-    </div>
-    <slot name="output" :value="model" />
+    <input ref="slider" type="range" v-model="model" v-bind="$attrs" />
+    <div class="thumb"></div>
   </div>
 </template>
 
@@ -126,65 +121,96 @@ const max = computed(() => slider.value?.max ?? 0);
 }
 
 .ui-slider {
-  display: flex;
-  flex-direction: column;
-  gap: map-get($spacing, small_2x);
-
-  &__wrapper {
-    display: flex;
-    align-items: center;
-    gap: map-get($spacing, small_3x);
-  }
-
-  input::-webkit-slider-thumb,
   input[type="range"] {
     -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
   }
 
   input[type="range"] {
-    margin: 0;
-    width: min-content;
-  }
-
-  &.--stretch input,
-  input::-webkit-slider-runnable-track {
+    height: 15px;
     width: 100%;
+    background: #ccc;
+    border-radius: 16px;
   }
 
-  &.--slider-rounded input::-webkit-slider-runnable-track {
-    border-radius: 4px;
+  /* Track: webkit browsers */
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: 15px;
+    background: #ccc;
+    border-radius: 16px;
   }
 
-  &.--thumb-rounded input::-webkit-slider-thumb {
-    border-radius: 100%;
+  /* Track: Mozilla Firefox */
+  input[type="range"]::-moz-range-track {
+    height: 15px;
+    background: #ccc;
+    border-radius: 16px;
   }
 
-  &.--s {
-    @include setSize(small);
+  /* Thumb: webkit */
+  input[type="range"]::-webkit-slider-thumb {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    /* creating a custom design */
+    height: 15px;
+    width: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid #f50;
   }
 
-  &.--m {
-    @include setSize(medium);
+  /* Thumb: Firefox */
+  input[type="range"]::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid #f50;
   }
 
-  &.--l {
-    @include setSize(large);
+  input[type="range"]::-webkit-slider-runnable-track {
+    // border-radius: 16px;
   }
 
-  &.--primary {
-    @include setColor($primary);
+  /* Track: Mozilla Firefox */
+  input[type="range"]::-moz-range-track {
+    // border-radius: 16px;
   }
-  &.--error {
-    @include setColor($error);
+
+  input[type="range"]::-webkit-slider-thumb {
+    // border-radius: 50%;
   }
-  &.--secondary {
-    @include setColor($secondary);
+
+  input[type="range"]::-moz-range-thumb {
+    // border-radius: 50%;
   }
-  &.--neutral {
-    @include setColor($neutral);
+
+  /* Thumb: webkit */
+  input[type="range"]::-webkit-slider-thumb {
+    /*  ...  */
+    /*  slider progress trick  */
+    box-shadow: -407px 0 0 400px #f50;
   }
-  &.--success {
-    @include setColor($success);
+
+  /* Thumb: Firefox */
+  input[type="range"]::-moz-range-thumb {
+    /*  ...  */
+    /*  slider progress trick  */
+    box-shadow: -407px 0 0 400px #f50;
+  }
+
+  input[type="range"] {
+    /*  ...  */
+    /*  slider progress trick  */
+    overflow: hidden;
+    border-radius: 16px;
+  }
+
+  .thumb {
+    color: red;
   }
 }
 </style>
