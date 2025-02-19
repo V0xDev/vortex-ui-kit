@@ -1,9 +1,20 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { shallowRef, watch } from "vue";
+import VSlider from "./components/Slider/VSlider.vue";
+
+const value = shallowRef(0);
+
+watch(value, (v) => console.log(v));
+</script>
 
 <template>
   <div class="info-container">
     <div class="info-container__wrapper">
-      <div class="btns"></div>
+      <VSlider v-model.formatNumber="value" :min="0" :max="1000">
+        <template #before-slider="{ minValue }">{{ minValue }}</template>
+        <template #after-slider="{ maxValue }">{{ maxValue }}</template>
+        <template #output="{ value }">Current value: {{ value }}</template>
+      </VSlider>
     </div>
   </div>
 </template>
