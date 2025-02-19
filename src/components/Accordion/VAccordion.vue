@@ -8,14 +8,24 @@ import VButton from "../Button/VButton.vue";
 import VIcon from "../Icon/VIcon.vue";
 import ArrowDown from "@/shared/icons/ArrowDown.vue";
 import { VAccordion } from "@/components/Accordion/VAccordion.type";
+import { useTemplateRef } from "vue";
+import { onClickOutside } from "@vueuse/core";
 
 const props = defineProps<VAccordion>();
 
+const target = useTemplateRef<HTMLElement>("accordionRef");
+
 const modelValue = defineModel({ required: true, default: false });
+
+onClickOutside(target, (_event) => (modelValue.value = false));
 </script>
 
 <template>
-  <div class="ui-accordion-item" :class="{ '--active': modelValue }">
+  <div
+    ref="accordionRef"
+    class="ui-accordion-item"
+    :class="{ '--active': modelValue }"
+  >
     <VButton
       v-bind="props"
       is-stretch
