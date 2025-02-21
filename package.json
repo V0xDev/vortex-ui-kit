@@ -1,20 +1,8 @@
 {
-  "name": "vortex-ui-kit",
+  "name": "vue-vortex-ui",
   "version": "1.0.0",
   "description": "UI Kit built with Vue 3, TypeScript, SCSS, and Storybook",
   "type": "module",
-  "files": [
-    "dist",
-    "assets",
-    "static"
-  ],
-  "exports": {
-    ".": {
-      "import": "./dist/vortex.es.ts",
-      "require": "./dist/vortex.umd.ts"
-    },
-    "./styles": "./dist/style.css"
-  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
@@ -22,6 +10,18 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "publish": "npm publish --access public"
+  },
+  "files": [
+    "dist",
+    "assets",
+    "static"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/vortex.es.js",
+      "require": "./dist/vortex.umd.js"
+    },
+    "./styles": "./dist/style.css"
   },
   "dependencies": {
     "@vueuse/core": "^12.5.0",
@@ -35,7 +35,6 @@
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/vue3": "^8.5.8",
     "@storybook/vue3-vite": "^8.5.8",
-    "@types/node": "^22.10.10",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/tsconfig": "^0.7.0",
     "css-loader": "^7.1.2",

@@ -4,7 +4,7 @@
 // добавить before-after слоты внутри title
 
 import VButton from "../Button/VButton.vue";
-import { VAccordion } from "@/components/Accordion/VAccordion.type";
+import { VAccordion } from "@/components/Accordion/VAccordion.types";
 import { useTemplateRef } from "vue";
 import { onClickOutside } from "@vueuse/core";
 import VIcon from "../Icon/VIcon.vue";

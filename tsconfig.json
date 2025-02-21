@@ -1,13 +1,23 @@
 {
   "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "emitDeclarationOnly": true,
+    "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
       "@components/*": ["src/components/*"],
       "@stories/*": ["src/stories/*"]
     },
-    "noEmit": true
+    "noEmit": false
   },
   "include": ["src/**/*.ts", "src/**/*.vue", "src/**/*.mdx"],
-  "exclude": ["node_modules", "node_modules/@types/mdx"]
+  "exclude": [
+    "node_modules",
+    "**/*.stories.ts",
+    "./src/stories",
+    "**/@types/mdx/**/*",
+    "**/*.mdx"
+  ]
 }

@@ -6,6 +6,7 @@ import dts from "vite-plugin-dts";
 // https://vite.dev/config/
 export default defineConfig({
   build: {
+    outDir: "dist",
     lib: {
       entry: resolve(__dirname, "src/components/index.ts"),
       name: "vortex",
@@ -13,7 +14,6 @@ export default defineConfig({
     },
     rollupOptions: {
       external: ["vue"],
-      input: resolve(__dirname, "src/components/index.ts"),
       output: {
         globals: {
           vue: "Vue",
@@ -25,7 +25,6 @@ export default defineConfig({
     vue(),
     dts({
       insertTypesEntry: true,
-      rollupTypes: true,
     }),
   ],
   resolve: {

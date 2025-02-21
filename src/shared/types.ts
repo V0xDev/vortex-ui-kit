@@ -1,6 +1,5 @@
-import VAccordion from "@/components/Accordion/VAccordion.vue";
 import { BaseSize, Color, Size } from "@/shared/constants";
-import { Meta } from "@storybook/vue3/*";
+import type { Meta } from "@storybook/vue3";
 
 export type HorizontalAlign = "left" | "right" | "center";
 export type VerticalAlign = "top" | "middle" | "bottom";
