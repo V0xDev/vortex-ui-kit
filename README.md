@@ -1,4 +1,4 @@
-![Изображение](/public/logo.png "Логотип Vortex")
+![Изображение](/public/сut_logo.png "Логотип Vortex")
 
 # UI-KIT на Vue3 + TS + Vite
 
