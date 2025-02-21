@@ -8,17 +8,26 @@
 
 <style lang="scss">
 @use "@/assets/_index.scss" as *;
-
+#app,
+body,
+html,
 .info-container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.info-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .info-container__wrapper {
-  width: 500px;
-  height: 300px;
+  width: 1000px;
+  height: 700px;
 }
 </style>

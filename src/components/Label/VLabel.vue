@@ -3,11 +3,22 @@ import { VLabel } from "@/components/Label/VLabel.types";
 
 withDefaults(defineProps<VLabel>(), {
   size: "s1",
+  horizontal: "left",
+  vertical: "top",
+  isBold: false,
 });
 </script>
 
 <template>
-  <span class="ui-label" :class="['--' + size]">
+  <span
+    class="ui-label"
+    :class="[
+      '--' + size,
+      '--' + horizontal,
+      '--' + vertical,
+      { '--bold': isBold },
+    ]"
+  >
     <div v-if="$slots.before" class="--before">
       <slot name="before" />
     </div>
@@ -25,7 +36,34 @@ withDefaults(defineProps<VLabel>(), {
 @use "@/assets/_variables.scss" as *;
 
 .ui-label {
+  display: flex;
   color: v-bind(color);
+
+  &.--bold {
+    font-weight: bold;
+  }
+
+  &.--left {
+    justify-content: left;
+  }
+  &.--center {
+    justify-content: center;
+  }
+  &.--right {
+    justify-content: right;
+  }
+
+  &.--top {
+    align-items: start;
+  }
+
+  &.--middle {
+    align-items: center;
+  }
+
+  &.--bottom {
+    align-items: end;
+  }
 
   &.--s1 {
     font-size: map-get($font-size, s1);

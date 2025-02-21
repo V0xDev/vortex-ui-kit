@@ -1,5 +1,6 @@
 %ellipsis {
   text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
   white-space: nowrap;
   overflow: hidden;
 }
