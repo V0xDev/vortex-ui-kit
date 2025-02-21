@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import VIcon from "@/components/Icon/VIcon.vue";
 import { shallowRef } from "vue";
-import { Person, Search, DuplicateIcon } from "@/shared/icons";
+import { PersonIcon, SearchIcon, DuplicateIcon } from "@/components";
 import VTabs from "@/components/Tabs/VTabs.vue";
 import VTab from "@/components/Tabs/VTab.vue";
 import { COLORS_OPTIONS, BASE_SIZE_OPTIONS } from "@/shared/constants";
@@ -414,7 +414,7 @@ export const WithIcons: Story = {
     },
   },
   render: (args) => ({
-    components: { VTabs, VTab, VIcon, Person, DuplicateIcon, Search },
+    components: { VTabs, VTab, VIcon, PersonIcon, DuplicateIcon, SearchIcon },
     setup() {
       const tabs = shallowRef(0);
       return { args, tabs };

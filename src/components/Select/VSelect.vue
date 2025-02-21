@@ -1,12 +1,12 @@
 <script setup lang="ts" generic="T">
 import { computed, useTemplateRef } from "vue";
 import VIcon from "@/components/Icon/VIcon.vue";
-import { CloseIcon } from "@/shared/icons";
-import ArrowDown from "@/shared/icons/ArrowDown.vue";
 import { type VSelect } from "@/components/Select/VSelect.types";
 import VLoader from "../Loader/VLoader.vue";
 import { SelectOption } from "@/shared/types";
 import { onClickOutside } from "@vueuse/core";
+import CloseIcon from "../Icons/CloseIcon.vue";
+import ArrowDown from "../Icons/ArrowDownIcon.vue";
 
 const props = withDefaults(defineProps<VSelect<T>>(), {
   color: "neutral",

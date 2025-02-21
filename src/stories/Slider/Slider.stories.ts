@@ -1,12 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import { COLORS_OPTIONS } from "@/shared/constants";
-import VIcon from "@/components/Icon/VIcon.vue";
-import DuplicateIcon from "@/shared/icons/DuplicateIcon.vue";
-import CloseIcon from "@/shared/icons/CloseIcon.vue";
-import VChip from "@/components/Chip/VChip.vue";
 import VLabel from "@/components/Label/VLabel.vue";
-import { VARIANT_CHIP_OPTIONS } from "@/components/Chip/VChip.types";
-import { computed, shallowRef, watch } from "vue";
+import { shallowRef, watch } from "vue";
 import VSlider from "@/components/Slider/VSlider.vue";
 
 const meta: Meta<typeof VSlider> = {
@@ -210,42 +205,3 @@ export const SlotsWithValues: Story = {
     `,
   }),
 };
-
-// export const BasicSlotsWithIcons: Story = {
-//   name: "Cлоты с иконками",
-//   argTypes: {
-//     color: {
-//       options: COLORS_OPTIONS,
-//       control: { type: "select" },
-//     },
-//     variant: {
-//       options: VARIANT_CHIP_OPTIONS,
-//       control: { type: "select" },
-//     },
-//   },
-//   render: (args) => ({
-//     components: { VChip, VLabel, VIcon, CloseIcon, DuplicateIcon },
-//     setup() {
-//       const textColor = computed(() =>
-//         args.variant === "outlined" ? "#000" : "#fff"
-//       );
-
-//       return { args, textColor };
-//     },
-//     template: `
-//       <VChip v-bind="args">
-//         <template #before>
-//           <VIcon :color="textColor" style="cursor: pointer">
-//             <DuplicateIcon />
-//           </VIcon>
-//         </template>
-//         <VLabel :color="textColor" size="s2">Chip</VLabel>
-//         <template #after>
-//           <VIcon :color="textColor" style="cursor: pointer">
-//             <CloseIcon />
-//           </VIcon>
-//         </template>
-//       </VChip>
-//     `,
-//   }),
-// };

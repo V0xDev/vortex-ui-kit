@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/vue3";
 import { BASE_SIZE_OPTIONS, COLORS_OPTIONS } from "@/shared/constants";
 import VTextarea from "@/components/Textarea/VTextarea.vue";
 import VIcon from "@/components/Icon/VIcon.vue";
-import { DuplicateIcon, CloseIcon } from "@/shared/icons";
+import { DuplicateIcon, CloseIcon } from "@/components";
 
 const meta: Meta<typeof VTextarea> = {
   title: "Примитивы/Большой текст",

@@ -3,13 +3,13 @@
 // добавить проп максимальной ширины, сделать анимацию открывания/закрывания
 // добавить before-after слоты внутри title
 
-import ArrowUp from "@/shared/icons/ArrowUp.vue";
 import VButton from "../Button/VButton.vue";
-import VIcon from "../Icon/VIcon.vue";
-import ArrowDown from "@/shared/icons/ArrowDown.vue";
 import { VAccordion } from "@/components/Accordion/VAccordion.type";
 import { useTemplateRef } from "vue";
 import { onClickOutside } from "@vueuse/core";
+import VIcon from "../Icon/VIcon.vue";
+import ArrowUp from "../Icons/ArrowUpIcon.vue";
+import ArrowDown from "../Icons/ArrowDownIcon.vue";
 
 const props = defineProps<VAccordion>();
 

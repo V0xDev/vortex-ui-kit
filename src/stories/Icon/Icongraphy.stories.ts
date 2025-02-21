@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import VIcon from "@/components/Icon/VIcon.vue";
 import {
-  ArrowDown,
-  ArrowUp,
+  ArrowDownIcon,
+  ArrowUpIcon,
   CloseIcon,
   DuplicateIcon,
-  Person,
-  EyeOff,
-  EyeOn,
-  Search,
-} from "@/shared/icons";
+  PersonIcon,
+  EyeOffIcon,
+  EyeOnIcon,
+  SearchIcon,
+} from "@/components";
 
 const meta: Meta<typeof VIcon> = {
   title: "Примитивы/Иконки",
@@ -32,12 +32,12 @@ type Story = StoryObj<typeof VIcon>;
 const Icons = {
   DuplicateIcon,
   CloseIcon,
-  ArrowDown,
-  ArrowUp,
-  Person,
-  EyeOff,
-  EyeOn,
-  Search,
+  ArrowDownIcon,
+  ArrowUpIcon,
+  PersonIcon,
+  EyeOffIcon,
+  EyeOnIcon,
+  SearchIcon,
 };
 
 export const Basic: Story = {

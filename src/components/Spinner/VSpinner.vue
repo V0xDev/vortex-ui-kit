@@ -1,10 +1,7 @@
 <script setup lang="ts">
-type IconProps = {
-  size?: string;
-  color?: string;
-};
+import { VSpinner } from "./VSpinner.types";
 
-withDefaults(defineProps<IconProps>(), {
+withDefaults(defineProps<VSpinner>(), {
   size: "14px",
   color: "#707070",
 });

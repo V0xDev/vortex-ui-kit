@@ -1,11 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import { COLORS_OPTIONS, BASE_SIZE_OPTIONS } from "@/shared/constants";
 import VIcon from "@/components/Icon/VIcon.vue";
-import DuplicateIcon from "@/shared/icons/DuplicateIcon.vue";
-import CloseIcon from "@/shared/icons/CloseIcon.vue";
 import VLabel from "@/components/Label/VLabel.vue";
 import VProgress from "@/components/Progress/VProgress.vue";
 import { VARIANT_PROGRESS_OPTIONS } from "@/components/Progress/VProgress.types";
+import { CloseIcon, DuplicateIcon } from "@/components";
 
 const meta: Meta<typeof VProgress> = {
   title: "Примитивы/Прогресс бар",

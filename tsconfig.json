@@ -5,8 +5,9 @@
       "@/*": ["src/*"],
       "@components/*": ["src/components/*"],
       "@stories/*": ["src/stories/*"]
-    }
+    },
+    "noEmit": true
   },
   "include": ["src/**/*.ts", "src/**/*.vue", "src/**/*.mdx"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "node_modules/@types/mdx"]
 }

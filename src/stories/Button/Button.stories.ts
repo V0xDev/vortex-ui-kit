@@ -2,8 +2,7 @@ import type { Meta, StoryObj } from "@storybook/vue3";
 import VButton from "@/components/Button/VButton.vue";
 import { COLORS_OPTIONS, BASE_SIZE_OPTIONS } from "@/shared/constants";
 import VIcon from "@/components/Icon/VIcon.vue";
-import DuplicateIcon from "@/shared/icons/DuplicateIcon.vue";
-import CloseIcon from "@/shared/icons/CloseIcon.vue";
+import { CloseIcon, DuplicateIcon } from "@/components";
 
 const meta: Meta<typeof VButton> = {
   title: "Примитивы/Кнопки",

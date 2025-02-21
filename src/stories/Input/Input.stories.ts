@@ -5,13 +5,15 @@ import VInput from "@/components/Input/VInput.vue";
 import { HTMLInputTypeAttribute } from "@/components/Input/VInput.types";
 import { VInput as VInputType } from "@/components/Input/VInput.types";
 import { computed, onScopeDispose, ref, toValue, watch } from "vue";
-import EyeOn from "@/shared/icons/EyeOn.vue";
-import EyeOff from "@/shared/icons/EyeOff.vue";
-import Person from "@/shared/icons/Person.vue";
-import Search from "@/shared/icons/Search.vue";
 import { useDebouncedField } from "@/shared/hooks/useRefDebounced";
 import VLabel from "@/components/Label/VLabel.vue";
-import { CloseIcon } from "@/shared/icons";
+import {
+  CloseIcon,
+  EyeOffIcon,
+  EyeOnIcon,
+  PersonIcon,
+  SearchIcon,
+} from "@/components";
 
 const meta: Meta<typeof VInput> = {
   title: "Примитивы/Input/Поле",
@@ -344,7 +346,7 @@ export const WithIcons: Story = {
     },
   },
   render: (args) => ({
-    components: { VInput, VIcon, Person },
+    components: { VInput, VIcon, PersonIcon },
     setup() {
       return { args };
     },
@@ -354,7 +356,7 @@ export const WithIcons: Story = {
       >
         <template #before>
           <VIcon>
-            <Person />
+            <PersonIcon />
           </VIcon>
         </template>
       </VInput>
@@ -384,7 +386,7 @@ export const WithIconsV2: Story = {
     },
   },
   render: (args) => ({
-    components: { VInput, VIcon, EyeOn, EyeOff },
+    components: { VInput, VIcon, EyeOnIcon, EyeOffIcon },
     setup() {
       const inputType = ref<HTMLInputTypeAttribute>("text");
 
@@ -409,8 +411,8 @@ export const WithIconsV2: Story = {
       >
         <template #after>
           <VIcon @click="changeType" style="cursor: pointer" width="25px">
-            <EyeOn v-if="inputType === 'text'" />
-            <EyeOff v-else />
+            <EyeOnIcon v-if="inputType === 'text'" />
+            <EyeOffIcon v-else />
           </VIcon>
         </template>
       </VInput>
@@ -440,7 +442,7 @@ export const WithIconsV3: Story = {
     },
   },
   render: (args) => ({
-    components: { VInput, VIcon, Search, VLabel, CloseIcon },
+    components: { VInput, VIcon, SearchIcon, VLabel, CloseIcon },
     setup() {
       const { value: searchValue, debounced: searchDebouncedValue } =
         useDebouncedField<string>({
@@ -502,7 +504,7 @@ export const WithIconsV3: Story = {
       >
         <template #before>
           <VIcon width="25px">
-            <Search />
+            <SearchIcon />
           </VIcon>
         </template>
         <template #after>

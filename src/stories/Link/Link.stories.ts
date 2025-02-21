@@ -2,8 +2,7 @@ import type { Meta, StoryObj } from "@storybook/vue3";
 import VLink from "@/components/Link/VLink.vue";
 import VLabel from "@/components/Label/VLabel.vue";
 import VIcon from "@/components/Icon/VIcon.vue";
-import CloseIcon from "@/shared/icons/CloseIcon.vue";
-import DuplicateIcon from "@/shared/icons/DuplicateIcon.vue";
+import { CloseIcon, DuplicateIcon } from "@/components";
 
 const meta: Meta<typeof VLink> = {
   title: "Примитивы/Ссылки",

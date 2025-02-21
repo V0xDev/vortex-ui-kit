@@ -1,11 +1,9 @@
-import type { Meta, StoryObj } from "@storybook/vue3";
-import { COLORS_OPTIONS, BASE_SIZE_OPTIONS } from "@/shared/constants";
-import VIcon from "@/components/Icon/VIcon.vue";
-import Person from "@/shared/icons/Person.vue";
-import { ref, watch } from "vue";
-import { SelectOption } from "@/shared/types";
-import VAutocomplete from "@/components/Autocomplete/VAutocomplete.vue";
+import { PersonIcon, VAutocomplete, VIcon } from "@/components";
+import { BASE_SIZE_OPTIONS, COLORS_OPTIONS } from "@/shared/constants";
 import { useDebouncedField } from "@/shared/hooks/useRefDebounced";
+import { SelectOption } from "@/shared/types";
+import type { Meta, StoryObj } from "@storybook/vue3";
+import { ref, watch } from "vue";
 
 type GenericMeta<C> = Omit<Meta<C>, "component"> & {
   component: Record<keyof C, unknown>;
@@ -315,7 +313,7 @@ export const WithIcons: Story = {
     },
   },
   render: (args) => ({
-    components: { VAutocomplete, VIcon, Person },
+    components: { VAutocomplete, VIcon, PersonIcon },
     setup() {
       const { value: searchValue, debounced: searchDebouncedValue } =
         useDebouncedField<string>({

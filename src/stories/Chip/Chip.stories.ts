@@ -1,12 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import { COLORS_OPTIONS } from "@/shared/constants";
 import VIcon from "@/components/Icon/VIcon.vue";
-import DuplicateIcon from "@/shared/icons/DuplicateIcon.vue";
-import CloseIcon from "@/shared/icons/CloseIcon.vue";
 import VChip from "@/components/Chip/VChip.vue";
 import VLabel from "@/components/Label/VLabel.vue";
 import { VARIANT_CHIP_OPTIONS } from "@/components/Chip/VChip.types";
 import { computed } from "vue";
+import { CloseIcon, DuplicateIcon } from "@/components";
 
 const meta: Meta<typeof VChip> = {
   title: "Примитивы/Чип",

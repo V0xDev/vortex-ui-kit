@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import { COLORS_OPTIONS, BASE_SIZE_OPTIONS } from "@/shared/constants";
-import VIcon from "@/components/Icon/VIcon.vue";
-import Person from "@/shared/icons/Person.vue";
 import VSelect from "@/components/Select/VSelect.vue";
 import { ref } from "vue";
 import { SelectOption } from "@/shared/types";
+import { PersonIcon, VIcon } from "@/components";
 
 type GenericMeta<C> = Omit<Meta<C>, "component"> & {
   component: Record<keyof C, unknown>;
@@ -320,7 +319,7 @@ export const WithIcons: Story = {
     },
   },
   render: (args) => ({
-    components: { VSelect, VIcon, Person },
+    components: { VSelect, VIcon, PersonIcon },
     setup() {
       const select = ref<SelectOption<string>>();
 

@@ -1,5 +1,5 @@
+import { VAccordion } from "@/components";
 import type { Meta, StoryObj } from "@storybook/vue3";
-import VAccordion from "@/components/Accordion/VAccordion.vue";
 
 const meta: Meta<typeof VAccordion> = {
   title: "Примитивы/Аккордеон",

@@ -1,12 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import { COLORS_OPTIONS, BASE_SIZE_OPTIONS } from "@/shared/constants";
 import VIcon from "@/components/Icon/VIcon.vue";
-import DuplicateIcon from "@/shared/icons/DuplicateIcon.vue";
-import CloseIcon from "@/shared/icons/CloseIcon.vue";
 import VLabel from "@/components/Label/VLabel.vue";
 import { shallowRef, watch } from "vue";
 import VSwitch from "@/components/Switch/VSwitch.vue";
 import { VARIANT_SWITCH_OPTIONS } from "@/components/Switch/VSwitch.types";
+import { CloseIcon, DuplicateIcon } from "@/components";
 
 const meta: Meta<typeof VSwitch> = {
   title: "Примитивы/Input/Переключатель",
