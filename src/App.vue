@@ -1,38 +1,46 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import VTable from "./components/Table/VTable.vue";
-import VTbody from "./components/Table/VTBody.vue";
+import VTBody from "./components/Table/VTBody.vue";
 import VTCell from "./components/Table/VTCell.vue";
 import VTHead from "./components/Table/VTHead.vue";
 import VTRow from "./components/Table/VTRow.vue";
-import { items } from "./components/Table/data";
+import { data } from "./stories/Table/store";
 
-const select = ref(false);
+const select = ref();
 </script>
 
 <template>
   <div class="info-container">
     <div class="info-container__wrapper">
-      <VTable columns-grid="100px 200px 1fr">
+      <VTable>
         <VTHead is-sticky>
-          <VTRow is-row-header background-color="primary" :is-hover="false">
+          <VTRow
+            class="set-style-row"
+            is-row-header
+            background-color="primary"
+            :is-hover="false"
+          >
             <VTCell border-color="primary">Header 1</VTCell>
             <VTCell border-color="primary">Header 2</VTCell>
             <VTCell border-color="primary">Header 3</VTCell>
           </VTRow>
         </VTHead>
-        <VTbody is-striped>
+        <VTBody is-striped background-color="primary">
           <VTRow
+            class="set-style-row"
             background-color="primary"
-            v-for="item in items"
+            v-for="item in data"
+            :is-select="item.id === select"
+            @click="select = item.id"
             :key="item.id"
             is-hover
           >
+            <VTCell border-color="primary">{{ item.id }}</VTCell>
             <VTCell border-color="primary">{{ item.title }}</VTCell>
             <VTCell border-color="primary">{{ item.description }}</VTCell>
-            <VTCell border-color="primary">{{ item.brand }}</VTCell>
           </VTRow>
-        </VTbody>
+        </VTBody>
       </VTable>
     </div>
   </div>
@@ -41,8 +49,14 @@ const select = ref(false);
 <style lang="scss">
 @use "@/assets/_index.scss" as *;
 
-:deep(.ui-table__row) {
-  grid-template-columns: v-bind(columnsGrid);
+.set-style-row {
+  display: grid;
+  grid-template-columns: 150px 150px 1fr;
+}
+
+.info-container__wrapper {
+  width: 1000px;
+  height: 700px;
 }
 
 #app,
@@ -61,10 +75,5 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.info-container__wrapper {
-  width: 1000px;
-  height: 700px;
 }
 </style>

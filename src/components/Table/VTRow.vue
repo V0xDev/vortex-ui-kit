@@ -1,16 +1,9 @@
 <script setup lang="ts">
-import { ColorMode } from "@/shared/types";
+import { VTRow } from "./VTable.types";
 
-interface Props {
-  backgroundColor?: ColorMode;
-  isRowHeader?: boolean;
-  isHover?: boolean;
-  isSelect?: boolean;
-}
-
-withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<VTRow>(), {
   backgroundColor: "neutral",
-  isHover: true,
+  isHover: false,
   isSelect: false,
 });
 </script>
@@ -44,28 +37,25 @@ withDefaults(defineProps<Props>(), {
     }
   }
 
-  &.--select,
+  &.--selected,
   &.--hover {
     &:hover {
       cursor: pointer;
     }
   }
 
-  &.--select {
+  &.--selected {
     background: map-get($color, 40);
   }
 
-  &.--hover:not(&.--select) {
-    &:hover:not(&.--select) {
+  &.--hover:not(&.--selected) {
+    &:hover:not(&.--selected) {
       background: map-get($color, 30);
     }
   }
 }
 
 .ui-table__row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
   :deep(th),
   :deep(td) {
     padding: 10px;

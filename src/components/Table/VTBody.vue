@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import { ColorMode } from "@/shared/types";
+import VSpinner from "../Spinner/VSpinner.vue";
+import { VTBody } from "./VTable.types";
 
-interface Props {
-  backgroundColor?: ColorMode;
-  isStriped?: boolean;
-}
-
-withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<VTBody>(), {
+  isError: false,
+  isLoading: false,
   backgroundColor: "neutral",
   isStriped: false,
 });
@@ -17,7 +15,22 @@ withDefaults(defineProps<Props>(), {
     class="ui-table__body"
     :class="['--' + backgroundColor, { '--striped': isStriped }]"
   >
-    <slot />
+    <slot v-if="isData?.length === 0" name="no-data">
+      <div class="ui-table__no-data">
+        <span class="ui-table__no-data_label">Данных пока нет</span>
+      </div>
+    </slot>
+    <slot v-else-if="isError" name="error">
+      <div class="ui-table__error">
+        <span class="ui-table__error_label">Ошибка загрузки данных...</span>
+      </div>
+    </slot>
+    <slot v-else-if="isLoading" name="loading">
+      <div class="ui-table__loading">
+        <VSpinner size="30px" />
+      </div>
+    </slot>
+    <slot v-else />
   </div>
 </template>
 
@@ -29,15 +42,43 @@ withDefaults(defineProps<Props>(), {
   background-color: map-get($color, 05);
 
   &.--striped {
-    :deep(ui-table__row):not(ui-table__row:hover, ui-table__row.--select) {
-      &:nth-child(even):not(:hover, .--selected) > .ui-table__cell {
-        background: map-get($color, 20);
-      }
+    :deep(.ui-table__row):not(:hover, .--selected):nth-child(even) {
+      background: map-get($color, 20);
+    }
+  }
+
+  .ui-table__loading :deep(.ui-spinner) {
+    border-top: 3px solid map-get($color, 40);
+  }
+
+  .ui-table__no-data {
+    &_label {
+      color: map-get($color, 80);
+      font-weight: bold;
     }
   }
 }
 
-.ui-table__tbody {
+.ui-table__no-data,
+.ui-table__loading,
+.ui-table__error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.ui-table__error {
+  &_label {
+    color: map-get($error, 80);
+    font-weight: bold;
+  }
+}
+
+.ui-table__body {
+  position: relative;
+  flex: 1;
+
   &.--primary {
     @include setBgColor($primary);
   }

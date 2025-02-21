@@ -1,12 +1,7 @@
 <script setup lang="ts">
-import { ColorMode } from "@/shared/types";
+import { VTCell } from "./VTable.types";
 
-interface Props {
-  borderColor?: ColorMode;
-  isTruncate?: boolean;
-}
-
-withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<VTCell>(), {
   borderColor: "neutral",
   isTruncate: true,
 });

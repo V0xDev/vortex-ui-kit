@@ -1,12 +1,7 @@
 <script setup lang="ts">
-import { ColorMode } from "@/shared/types";
+import { VThead } from "./VTable.types";
 
-interface Props {
-  borderColor?: ColorMode;
-  isSticky?: boolean;
-}
-
-withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<VThead>(), {
   borderColor: "neutral",
   isSticky: false,
 });
@@ -36,7 +31,7 @@ withDefaults(defineProps<Props>(), {
     z-index: 2;
   }
 
-  :deep(tr) {
+  :deep(div) {
     user-select: none;
   }
 
