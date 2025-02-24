@@ -15,6 +15,7 @@ export default defineConfig({
       fileName: (format) => `vertex-ui-kit.${format}.js`, // имена создаваемых файлов
       cssFileName: "style", // имя файла стилей
     },
+    cssCodeSplit: true,
     rollupOptions: {
       // параметры lib
       external: ["vue"], // исключаем библиотеку при билде
@@ -25,7 +26,7 @@ export default defineConfig({
       },
     },
   },
-  plugins: [vue(), dts({ insertTypesEntry: true })],
+  plugins: [vue(), dts({ insertTypesEntry: true, outDir: "dist" })],
   resolve: {
     alias: {
       "@": resolve(__dirname, "./src"),
