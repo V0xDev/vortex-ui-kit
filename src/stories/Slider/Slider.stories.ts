@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import { COLORS_OPTIONS } from "@/shared/constants";
 import VIcon from "@/components/Icon/VIcon.vue";
-import DuplicateIcon from "@/shared/icons/DuplicateIcon.vue";
-import CloseIcon from "@/shared/icons/CloseIcon.vue";
+import DuplicateIcon from "@/components/Icons/DuplicateIcon.vue";
+import CloseIcon from "@/components/Icons/CloseIcon.vue";
 import VChip from "@/components/Chip/VChip.vue";
 import VLabel from "@/components/Label/VLabel.vue";
 import { VARIANT_CHIP_OPTIONS } from "@/components/Chip/VChip.types";

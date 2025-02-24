@@ -5,13 +5,13 @@ import VInput from "@/components/Input/VInput.vue";
 import { HTMLInputTypeAttribute } from "@/components/Input/VInput.types";
 import { VInput as VInputType } from "@/components/Input/VInput.types";
 import { computed, onScopeDispose, ref, toValue, watch } from "vue";
-import EyeOn from "@/shared/icons/EyeOn.vue";
-import EyeOff from "@/shared/icons/EyeOff.vue";
-import Person from "@/shared/icons/Person.vue";
-import Search from "@/shared/icons/Search.vue";
-import { useDebouncedField } from "@/shared/hooks/useRefDebounced";
+import EyeOn from "@/components/Icons/EyeOn.vue";
+import EyeOff from "@/components/Icons/EyeOff.vue";
+import Person from "@/components/Icons/Person.vue";
+import Search from "@/components/Icons/Search.vue";
+import { useDebouncedField } from "@/hooks/useRefDebounced";
 import VLabel from "@/components/Label/VLabel.vue";
-import { CloseIcon } from "@/shared/icons";
+import { CloseIcon } from "@/components/Icons";
 
 const meta: Meta<typeof VInput> = {
   title: "Примитивы/Input/Поле",

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import { COLORS_OPTIONS, BASE_SIZE_OPTIONS } from "@/shared/constants";
 import VIcon from "@/components/Icon/VIcon.vue";
-import Person from "@/shared/icons/Person.vue";
+import Person from "@/components/Icons/Person.vue";
 import VSelect from "@/components/Select/VSelect.vue";
 import { ref } from "vue";
 import { SelectOption } from "@/shared/types";

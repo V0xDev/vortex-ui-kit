@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import VIcon from "@/components/Icon/VIcon.vue";
 import { shallowRef } from "vue";
-import { Person, Search, DuplicateIcon } from "@/shared/icons";
+import { Person, Search, DuplicateIcon } from "@/components/Icons";
 import VTabs from "@/components/Tabs/VTabs.vue";
 import VTab from "@/components/Tabs/VTab.vue";
 import { COLORS_OPTIONS, BASE_SIZE_OPTIONS } from "@/shared/constants";

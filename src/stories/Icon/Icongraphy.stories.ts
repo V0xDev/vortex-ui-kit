@@ -9,7 +9,7 @@ import {
   EyeOff,
   EyeOn,
   Search,
-} from "@/shared/icons";
+} from "@/components/Icons";
 
 const meta: Meta<typeof VIcon> = {
   title: "Примитивы/Иконки",
