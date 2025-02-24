@@ -1,10 +1,14 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "skipLibCheck": true, // скип ошибок JSX (bug storybook или vue)
+    "declaration": true, // необходим для генерации типов ts
+    "emitDeclarationOnly": false, // необходим для генерации типов ts
+    "outDir": "./dist", // папка вывода скомпилированных типов
+    "baseUrl": ".", // папка для чтения файлов ts
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"] // путь для alias
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.vue", "src/**/*.mdx"],
-  "exclude": ["node_modules"]
+  "include": ["src/**/*", "src/**/*.vue"], // какие файлы включаются в сборку
+  "exclude": ["node_modules"] // какие файлы исключаются из проекта
 }
