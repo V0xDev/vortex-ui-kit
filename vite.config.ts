@@ -3,6 +3,7 @@ import vue from "@vitejs/plugin-vue";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 import dts from "vite-plugin-dts";
+import deleteFilesPlugin from "./rollupPlugins";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -24,9 +25,10 @@ export default defineConfig({
           vue: "Vue", // добавляем названия библиотеки в обязательные файлы
         },
       },
+      plugins: [deleteFilesPlugin([".png", ".svg"])],
     },
   },
-  plugins: [vue(), dts({ insertTypesEntry: true, outDir: "dist" })],
+  plugins: [vue(), dts({ rollupTypes: true })],
   resolve: {
     alias: {
       "@": resolve(__dirname, "./src"),

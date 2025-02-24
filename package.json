@@ -1,5 +1,7 @@
 {
-  "name": "@vortex-ui-kit",
+  "name": "vortex-ui-kit-test",
+  "author": "v0xdev",
+  "license": "MIT",
   "version": "0.0.1",
   "type": "module",
   "main": "./dist/vertex-ui-kit.umd.js",

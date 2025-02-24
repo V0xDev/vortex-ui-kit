@@ -5,7 +5,6 @@ import VSpinner from "@/components/Spinner/VSpinner.vue";
 withDefaults(defineProps<VButton>(), {
   color: "primary",
   size: "s",
-  isRounded: true,
 });
 </script>
 

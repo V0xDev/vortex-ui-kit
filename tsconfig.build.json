@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": [
+    "src/stories/**/*",
+    "src/App.vue",
+    "**/*.stories.ts",
+    "src/assets/**/*"
+  ]
+}
