@@ -32,9 +32,6 @@ withDefaults(defineProps<VLabel>(), {
 </template>
 
 <style lang="scss" scoped>
-@use "sass:map";
-@use "@/assets/_variables.scss" as *;
-
 .ui-label {
   display: flex;
   color: v-bind(color);

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { VButton } from "@/components/Button/VButton.types";
-import VSpinner from "@components/Spinner/VSpinner.vue";
+import VSpinner from "@/components/Spinner/VSpinner.vue";
 
 withDefaults(defineProps<VButton>(), {
   color: "primary",
@@ -39,11 +39,6 @@ withDefaults(defineProps<VButton>(), {
 </template>
 
 <style scoped lang="scss">
-@use "sass:map";
-@use "@/assets/_variables.scss" as *;
-@use "@/assets/_mixins.scss" as *;
-@use "@/assets/_extends.scss" as *;
-
 @mixin button-styles($backColor) {
   background-color: map-get($backColor, 100);
   color: map-get($neutral, 10);

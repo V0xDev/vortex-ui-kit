@@ -17,10 +17,6 @@ withDefaults(defineProps<VTCell>(), {
 </template>
 
 <style lang="scss" scoped>
-@use "sass:map";
-@use "@/assets/_variables.scss" as *;
-@use "@/assets/_extends.scss" as *;
-
 @mixin setBorderColor($color) {
   border: 1px solid map-get($color, 60);
 }

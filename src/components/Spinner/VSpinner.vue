@@ -15,8 +15,6 @@ withDefaults(defineProps<IconProps>(), {
 </template>
 
 <style lang="scss" scoped>
-@use "@/assets/_variables.scss" as *;
-
 .ui-spinner {
   width: v-bind(size);
   height: v-bind(size);

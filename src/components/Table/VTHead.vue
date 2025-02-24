@@ -17,9 +17,6 @@ withDefaults(defineProps<VThead>(), {
 </template>
 
 <style lang="scss" scoped>
-@use "sass:map";
-@use "@/assets/_variables.scss" as *;
-
 @mixin setStyle($color) {
   background-color: map-get($color, 80);
 }

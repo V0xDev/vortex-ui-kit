@@ -28,8 +28,6 @@ const value = defineModel<T | null>({ required: true, default: null });
 </template>
 
 <style lang="scss" scoped>
-@use "@/assets/_variables.scss" as *;
-
 @mixin checkbox-styles($backColor) {
   accent-color: map-get($backColor, 100);
 

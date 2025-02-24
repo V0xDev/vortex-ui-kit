@@ -7,9 +7,6 @@
 </template>
 
 <style lang="scss" scoped>
-@use "sass:map";
-@use "@/assets/_variables.scss" as *;
-
 .ui-table {
   width: 100%;
   height: 100%;

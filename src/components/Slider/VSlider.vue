@@ -53,10 +53,6 @@ defineExpose({
 </template>
 
 <style lang="scss" scoped>
-@use "sass:map";
-@use "@/assets/_variables.scss" as *;
-@use "@/assets/_extends.scss" as *;
-
 @mixin setSize($customSize) {
   $multiplyHeight: 1.5;
   $calculateSliderHeight: calc(map-get($size, $customSize) / $multiplyHeight);

@@ -26,10 +26,6 @@ withDefaults(defineProps<VCard>(), {
 </template>
 
 <style lang="scss" scoped>
-@use "sass:map";
-@use "@/assets/_variables.scss" as *;
-@use "@/assets/_mixins.scss" as *;
-
 @mixin set-color($color) {
   border: 1px solid map-get($color, 20);
 

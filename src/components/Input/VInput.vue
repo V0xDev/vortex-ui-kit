@@ -48,10 +48,6 @@ const modelValue = defineModel<string | null>({
 </template>
 
 <style lang="scss" scoped>
-@use "sass:map";
-@use "@/assets/_variables.scss" as *;
-@use "@/assets/_mixins.scss" as *;
-
 $iconMargin: 5px;
 $inputPadding: 33px;
 

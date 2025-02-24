@@ -36,11 +36,6 @@ const modelValue = defineModel<boolean>({ required: true, default: false });
 </template>
 
 <style lang="scss" scoped>
-@use "sass:map";
-@use "@/assets/_variables.scss" as *;
-@use "@/assets/_mixins.scss" as *;
-@use "@/assets/_extends.scss" as *;
-
 $base-size-multiplier: 1.3; // Множитель базового размера
 $wrapper-width-ratio: 2.1; // Соотношение ширины обертки к базовому размеру
 $slider-size-ratio: 0.7; // Размер слайдера относительно базового размера

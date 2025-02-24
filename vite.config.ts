@@ -8,8 +8,6 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-      "@components": path.resolve(__dirname, "./src/components"),
-      "@stories": path.resolve(__dirname, "./src/stories"),
     },
   },
   css: {
@@ -22,6 +20,12 @@ export default defineConfig({
           "global-builtin",
           "import",
         ],
+        additionalData: `
+          @use "sass:map";
+          @use "@/assets/variables.scss" as *;
+          @use "@/assets/mixins.scss" as *;
+          @use "@/assets/extends.scss" as *;
+        `,
       },
     },
   },

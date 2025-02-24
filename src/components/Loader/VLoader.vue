@@ -14,10 +14,6 @@ withDefaults(defineProps<VLinearSpinner>(), {
 </template>
 
 <style lang="scss" scoped>
-@use "sass:map";
-@use "@/assets/_variables.scss" as *;
-@use "@/assets/_mixins.scss" as *;
-
 .ui-linear-spinner {
   height: v-bind(height);
   width: 100%;

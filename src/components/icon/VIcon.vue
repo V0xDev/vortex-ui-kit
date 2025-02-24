@@ -25,8 +25,6 @@ withDefaults(defineProps<IconWrapperProps>(), {
 </template>
 
 <style scoped lang="scss">
-@use "@/assets/_variables.scss" as *;
-
 .ui-icon {
   width: v-bind(width);
   height: v-bind(height);

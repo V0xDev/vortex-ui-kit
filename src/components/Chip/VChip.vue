@@ -31,10 +31,6 @@ withDefaults(defineProps<VChip>(), {
 </template>
 
 <style scoped lang="scss">
-@use "sass:map";
-@use "@/assets/_variables.scss" as *;
-@use "@/assets/_mixins.scss" as *;
-
 $fullRounded: 18px;
 
 @mixin set-style($color) {

@@ -118,11 +118,6 @@ onClickOutside(target, (_event) => (isOpen.value = false));
 </template>
 
 <style lang="scss" scoped>
-@use "sass:map";
-@use "@/assets/_variables.scss" as *;
-@use "@/assets/_mixins.scss" as *;
-@use "@/assets/_extends.scss" as *;
-
 @mixin select-style($color, $intensive: 80) {
   .selected-value {
     border: 1px solid map-get($color, $intensive);

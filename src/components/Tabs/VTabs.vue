@@ -29,10 +29,6 @@ createTabs(modelValue);
 </template>
 
 <style lang="scss" scoped>
-@use "sass:map";
-@use "@/assets/_variables.scss" as *;
-@use "@/assets/_mixins.scss" as *;
-
 @mixin set-variant($backColor) {
   &.--solid {
     :deep(.ui-tab) {

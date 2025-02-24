@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import VSpinner from "@components/Spinner/VSpinner.vue";
+import VSpinner from "@/components/Spinner/VSpinner.vue";
 import { getTabs } from "./VTabs.provide";
 import { VTab } from "./VTabs.types";
 
@@ -34,11 +34,6 @@ const { activeValue, setActive } = getTabs();
 </template>
 
 <style scoped lang="scss">
-@use "sass:map";
-@use "@/assets/_variables.scss" as *;
-@use "@/assets/_mixins.scss" as *;
-@use "@/assets/_extends.scss" as *;
-
 .ui-tab {
   position: relative;
   backface-visibility: hidden;

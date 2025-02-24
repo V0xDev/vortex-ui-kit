@@ -58,11 +58,6 @@ const displayValue = computed(() => progressPercentage.value + "%");
 </template>
 
 <style lang="scss" scoped>
-@use "sass:map";
-@use "@/assets/_variables.scss" as *;
-@use "@/assets/_mixins.scss" as *;
-@use "@/assets/_extends.scss" as *;
-
 $opacityBackValue: 0.9;
 $base-size-multiplier: 0.2;
 

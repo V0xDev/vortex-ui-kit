@@ -23,9 +23,6 @@ withDefaults(defineProps<VTRow>(), {
 </template>
 
 <style lang="scss" scoped>
-@use "sass:map";
-@use "@/assets/_variables.scss" as *;
-
 @mixin setBgColor($color) {
   background: map-get($color, 05);
 

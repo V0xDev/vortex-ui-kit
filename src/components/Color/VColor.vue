@@ -15,9 +15,6 @@ const textColor = computed(() => Color[props.color]);
 </template>
 
 <style lang="scss" scoped>
-@use "sass:map";
-@use "@/assets/_variables.scss" as *;
-
 .ui-color {
   display: inline-block;
   font-size: map-get($size, large);
