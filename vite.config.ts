@@ -12,6 +12,7 @@ export default defineConfig({
       entry: resolve(__dirname, "src/index.ts"), // фаил билда
       name: "vortex-ui-kit", // имя библиотеки файла
       fileName: (format) => `vertex-ui-kit.${format}.js`, // имена создаваемых файлов
+      cssFileName: "style", // имя файла стилей
     },
     rollupOptions: {
       // параметры lib

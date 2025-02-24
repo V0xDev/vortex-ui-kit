@@ -9,7 +9,7 @@
       "import": "./dist/vertex-ui-kit.es.js",
       "require": "./dist/vertex-ui-kit.umd.js"
     },
-    "./dist/vortex-ui-kit.css": "./dist/vortex-ui-kit.css"
+    "./dist/style.css": "./dist/style.css"
   },
   "files": [
     "dist"
