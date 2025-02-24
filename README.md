@@ -18,7 +18,7 @@
 
 Npm | Yarn:
 
-- `В разработке`
+- `https://www.npmjs.com/package/vortex-ui-kit`
 
 #### Документация:
 
