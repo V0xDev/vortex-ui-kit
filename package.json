@@ -2,9 +2,21 @@
   "name": "vortex-ui-kit",
   "version": "0.0.0",
   "type": "module",
+  "main": "./dist/vertex-ui-kit.umd.js",
+  "module": "./dist/vertex-ui-kit.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vertex-ui-kit.es.js",
+      "require": "./dist/vertex-ui-kit.umd.js"
+    },
+    "./dist/vortex-ui-kit.css": "./dist/vortex-ui-kit.css"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"

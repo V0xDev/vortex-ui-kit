@@ -9,15 +9,16 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(__dirname, "src/index.ts"),
-      name: "vortex-ui-kit",
-      fileName: (format) => `vertex-ui-kit.${format}.js`,
+      entry: resolve(__dirname, "src/index.ts"), // фаил билда
+      name: "vortex-ui-kit", // имя библиотеки файла
+      fileName: (format) => `vertex-ui-kit.${format}.js`, // имена создаваемых файлов
     },
     rollupOptions: {
-      external: ["vue"],
+      // параметры lib
+      external: ["vue"], // исключаем библиотеку при билде
       output: {
         globals: {
-          vue: "Vue",
+          vue: "Vue", // добавляем названия библиотеки в обязательные файлы
         },
       },
     },
