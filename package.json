@@ -2,7 +2,7 @@
   "name": "vortex-ui-kit",
   "author": "v0xdev",
   "license": "MIT",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "module",
   "main": "./dist/vertex-ui-kit.umd.js",
   "module": "./dist/vertex-ui-kit.es.js",
