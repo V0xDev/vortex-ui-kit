@@ -40,7 +40,7 @@ const unicId = useId();
     height: map-get($size, $custom_size) * $multiplierSize;
   }
 
-  font-size: map-get($size, $custom_size) * $multiplierFontSize;
+  font-size: map-get($size, $custom_size);
 }
 
 .ui-radio-button {
@@ -81,6 +81,10 @@ const unicId = useId();
 
   &.--s {
     @include set-width(small);
+
+    label {
+      margin-top: 3px;
+    }
   }
   &.--m {
     @include set-width(medium);

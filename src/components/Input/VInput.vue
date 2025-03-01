@@ -117,8 +117,8 @@ $inputPadding: 33px;
     margin: 0;
     border: none;
     color: map-get($neutral, 140);
-    line-height: 1.5;
-    padding: map-get($spacing, small_3x) map-get($spacing, small_3x);
+    line-height: 1.4;
+    padding: map-get($spacing, small_3x) map-get($spacing, small_2x);
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
 
