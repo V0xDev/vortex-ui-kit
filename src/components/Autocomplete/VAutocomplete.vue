@@ -167,8 +167,8 @@ onClickOutside(target, (_event) => (isOpen.value = false));
 @mixin setSize($fontSize, $paddingY, $paddingX) {
   $paddingIcon: 54px;
   $multiplierSpacingSize: 2.5;
-  $spacingX: calc(map-get($spacing, $paddingX) / $multiplierSpacingSize);
-  $spacingY: map-get($spacing, $paddingY);
+  $spacingX: map-get($spacing, small_2x);
+  $spacingY: map-get($spacing, small_3x);
 
   .selected-value {
     font-size: map-get($size, $fontSize);

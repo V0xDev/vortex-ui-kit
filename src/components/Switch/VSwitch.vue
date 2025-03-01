@@ -36,9 +36,9 @@ const modelValue = defineModel<boolean>({ required: true, default: false });
 </template>
 
 <style lang="scss" scoped>
-$base-size-multiplier: 1.3; // Множитель базового размера
+$base-size-multiplier: 1.1; // Множитель базового размера
 $wrapper-width-ratio: 2.1; // Соотношение ширины обертки к базовому размеру
-$slider-size-ratio: 0.7; // Размер слайдера относительно базового размера
+$slider-size-ratio: 0.65; // Размер слайдера относительно базового размера
 $slider-position-offset: 0.2; // Начальное позиционирование слайдера
 $slider-active-translation: 1.05; // Смещение слайдера при активации
 

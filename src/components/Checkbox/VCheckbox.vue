@@ -40,7 +40,7 @@ const value = defineModel<T | null>({ required: true, default: null });
     height: map-get($size, $customSize) * $multiplierSize;
   }
 
-  font-size: map-get($size, $customSize) * $multiplierFontSize;
+  font-size: map-get($size, $customSize);
 }
 
 %disabled-styles {

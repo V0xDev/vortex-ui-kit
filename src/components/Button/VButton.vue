@@ -124,19 +124,22 @@ withDefaults(defineProps<VButton>(), {
     @include button-styles($success);
   }
 
+  &.--s,
+  &.--m,
+  &.--l {
+    padding: map-get($spacing, small_3x) map-get($spacing, small_2x);
+  }
+
   &.--s {
     font-size: map-get($size, small);
-    padding: map-get($spacing, small_2x) map-get($spacing, medium);
   }
 
   &.--m {
     font-size: map-get($size, medium);
-    padding: map-get($spacing, small_2x) map-get($spacing, large);
   }
 
   &.--l {
     font-size: map-get($size, large);
-    padding: map-get($spacing, small_2x) map-get($spacing, large_x);
   }
 }
 </style>
