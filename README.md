@@ -18,7 +18,7 @@
 1. **Установите ui-kit**:
 
    ```bash
-   npm i vortex-ui-kit
+   yarn add vortex-ui-kit   # или npm i vortex-ui-kit
    ```
 
 2. **Интеграция стилей в приложение vue 3**
