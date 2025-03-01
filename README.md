@@ -1,6 +1,6 @@
 # 🚀 UI-KIT на Vue3 + TS + Vite
 
-[![Vue](https://img.shields.io/badge/Vue-3.5+-%2342b883?logo=vuedotjs)](https://vuejs.org/) [![TypeScript](https://img.shields.io/badge/TypeScript-5%2B-%233178c6?logo=typescript)](https://www.typescriptlang.org/) [![Vite](https://img.shields.io/badge/Vite-6%2B-%23646cff?logo=vite)](https://vitejs.dev/) [![Sass](https://img.shields.io/badge/Sass-1.8%2B-%23646cff?logo=sass)](https://sass-scss.ru/documentation/)
+[![Vue](https://img.shields.io/badge/Vue-3.5+-%2342b883?logo=vuedotjs)](https://vuejs.org/) [![TypeScript](https://img.shields.io/badge/TypeScript-5%2B-%233178c6?logo=typescript)](https://www.typescriptlang.org/) [![Vite](https://img.shields.io/badge/Vite-6%2B-%23646cff?logo=vite)](https://vitejs.dev/) [![Sass](https://img.shields.io/badge/Sass-1.8%2B-%23646cff?logo=sass)](https://sass-scss.ru/)
 
 **Создавайте интерфейсы мгновенно!**
 Компонентная библиотека для Vue.js с поддержкой TypeScript и SCSS.

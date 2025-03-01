@@ -3,6 +3,10 @@
   "author": "v0xdev",
   "license": "MIT",
   "version": "1.0.9",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/V0xDev/vortex-ui-kit"
+  },
   "type": "module",
   "main": "./dist/vertex-ui-kit.umd.js",
   "module": "./dist/vertex-ui-kit.es.js",
