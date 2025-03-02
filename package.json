@@ -8,14 +8,14 @@
     "url": "https://github.com/V0xDev/vortex-ui-kit"
   },
   "type": "module",
-  "main": "./dist/vertex-ui-kit.umd.js",
-  "module": "./dist/vertex-ui-kit.es.js",
+  "main": "./dist/vortex-ui-kit.umd.js",
+  "module": "./dist/vortex-ui-kit.es.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/vertex-ui-kit.es.js",
-      "require": "./dist/vertex-ui-kit.umd.js"
+      "import": "./dist/vortex-ui-kit.es.js",
+      "require": "./dist/vortex-ui-kit.umd.js"
     },
     "./style.css": "./dist/index.css"
   },
